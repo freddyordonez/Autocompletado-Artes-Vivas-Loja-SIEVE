@@ -1,0 +1,25 @@
+{
+  "name": "autocompletado-loja-sieve",
+  "version": "1.0.0",
+  "description": "Autocompletado Turístico de Loja con Política de Caché SIEVE y Listas Dobles - Grupo 4 (UNL)",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --test tests/navegacion.test.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "trie",
+    "sieve",
+    "cache",
+    "loja",
+    "estructuras-de-datos",
+    "grupo-4"
+  ],
+  "author": "Grupo 4 - Computación Tercer Ciclo UNL",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freddyordonez/Portafolio-de-Estructura-de-Datos.git"
+  }
+}
+
