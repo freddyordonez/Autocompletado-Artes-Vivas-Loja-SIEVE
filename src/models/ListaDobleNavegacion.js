@@ -1,126 +1,192 @@
-﻿const NodoDoble = require('./NodoDoble');
+﻿
+const NodoDoble = require('./NodoDoble');
 
 /**
- * Estructura de datos dinámica para la gestión de navegación bidireccional.
+ * Estructura de datos dinámica para la gestión
+ * de navegación bidireccional.
  */
 class ListaDobleNavegacion {
-  constructor() {
-    this.cabeza = null;
-    this.cola = null;
-    this.actual = null; // Puntero/Cursor de navegación activa
-    this.longitud = 0;
-  }
-
-  /**
-   * Inserta un nuevo registro al final de la lista. Complejidad: O(1)
-   * @param {Object} dato - Registro a almacenar.
-   * @returns {NodoDoble} El nodo creado.
-   */
-  insertar(dato) {
-    const nuevoNodo = new NodoDoble(dato);
-
-    if (!this.cabeza) {
-      this.cabeza = nuevoNodo;
-      this.cola = nuevoNodo;
-      this.actual = nuevoNodo;
-    } else {
-      this.cola.siguiente = nuevoNodo;
-      nuevoNodo.anterior = this.cola;
-      this.cola = nuevoNodo;
+    constructor() {
+        this.cabeza = null;
+        this.cola = null;
+        this.actual = null;
+        this.longitud = 0;
     }
 
-    this.longitud++;
-    return nuevoNodo;
-  }
+    /**
+     * Inserta un nuevo registro al final de la lista.
+     * Complejidad: O(1)
+     */
+    insertar(dato) {
+        const nuevoNodo = new NodoDoble(dato);
 
-  /**
-   * Desplaza el cursor activo hacia el siguiente nodo. Complejidad: O(1)
-   * @returns {Object|null} El dato del nuevo nodo activo o null si alcanza el final.
-   */
-  avanzar() {
-    if (this.actual && this.actual.siguiente) {
-      this.actual = this.actual.siguiente;
-      return this.actual.dato;
-    }
-    return null;
-  }
+        if (this.cabeza === null) {
+            this.cabeza = nuevoNodo;
+            this.cola = nuevoNodo;
+            this.actual = nuevoNodo;
+        } else {
+            nuevoNodo.anterior = this.cola;
+            this.cola.siguiente = nuevoNodo;
+            this.cola = nuevoNodo;
+        }
 
-  /**
-   * Desplaza el cursor activo hacia el nodo anterior. Complejidad: O(1)
-   * @returns {Object|null} El dato del nuevo nodo activo o null si alcanza el inicio.
-   */
-  retroceder() {
-    if (this.actual && this.actual.anterior) {
-      this.actual = this.actual.anterior;
-      return this.actual.dato;
-    }
-    return null;
-  }
-
-  /**
-   * Retorna el elemento actualmente seleccionado por el cursor.
-   * @returns {Object|null}
-   */
-  obtenerActual() {
-    return this.actual ? this.actual.dato : null;
-  }
-
-  /**
-   * Elimina el elemento en la posición actual y reconecta los enlaces.
-   * Libera las referencias internas para apoyar la gestión de memoria. Complejidad: O(1)
-   * @returns {boolean} Confirmación de eliminación.
-   */
-  eliminarActual() {
-    if (!this.actual) return false;
-
-    const nodoAEliminar = this.actual;
-
-    if (nodoAEliminar.anterior) {
-      nodoAEliminar.anterior.siguiente = nodoAEliminar.siguiente;
-    } else {
-      this.cabeza = nodoAEliminar.siguiente;
+        this.longitud++;
+        return nuevoNodo;
     }
 
-    if (nodoAEliminar.siguiente) {
-      nodoAEliminar.siguiente.anterior = nodoAEliminar.anterior;
-      this.actual = nodoAEliminar.siguiente;
-    } else {
-      this.cola = nodoAEliminar.anterior;
-      this.actual = nodoAEliminar.anterior;
+    /**
+     * Avanza al siguiente nodo.
+     * Complejidad: O(1)
+     */
+    avanzar() {
+        if (this.actual && this.actual.siguiente) {
+            this.actual = this.actual.siguiente;
+            return this.actual.dato;
+        }
+
+        return null;
     }
 
-    nodoAEliminar.siguiente = null;
-    nodoAEliminar.anterior = null;
+    /**
+     * Retrocede al nodo anterior.
+     * Complejidad: O(1)
+     */
+    retroceder() {
+        if (this.actual && this.actual.anterior) {
+            this.actual = this.actual.anterior;
+            return this.actual.dato;
+        }
 
-    this.longitud--;
-    return true;
-  }
-
-  /**
-   * Busca un elemento en la lista por su ID.
-   * @param {number} id - ID del elemento a buscar.
-   * @returns {Object|null} El dato encontrado o null si no existe.
-   */
-  buscarPorId(id) {
-    let actual = this.cabeza;
-    while (actual) {
-      if (actual.dato && actual.dato.id === id) {
-        return actual.dato;
-      }
-      actual = actual.siguiente;
+        return null;
     }
-    return null;
-  }
 
-  /**
-   * Vacía la lista por completo reiniciando sus punteros y longitud.
-   */
-  vaciar() {
-    this.cabeza = null;
-    this.cola = null;
-    this.actual = null;
-    this.longitud = 0;
-  }
+    /**
+     * Obtiene el dato del nodo actual.
+     */
+    obtenerActual() {
+        return this.actual ? this.actual.dato : null;
+    }
+
+    /**
+     * Elimina el nodo actual y reconecta los enlaces.
+     * Complejidad: O(1)
+     */
+    eliminarActual() {
+        if (this.actual === null) {
+            return false;
+        }
+
+        const nodoAEliminar = this.actual;
+        const anterior = nodoAEliminar.anterior;
+        const siguiente = nodoAEliminar.siguiente;
+
+        if (anterior !== null) {
+            anterior.siguiente = siguiente;
+        } else {
+            this.cabeza = siguiente;
+        }
+
+        if (siguiente !== null) {
+            siguiente.anterior = anterior;
+            this.actual = siguiente;
+        } else {
+            this.cola = anterior;
+            this.actual = anterior;
+        }
+
+        // Liberar referencias del nodo eliminado.
+        nodoAEliminar.anterior = null;
+        nodoAEliminar.siguiente = null;
+
+        this.longitud--;
+
+        // Si la lista quedó vacía, reiniciar los punteros.
+        if (this.longitud === 0) {
+            this.cabeza = null;
+            this.cola = null;
+            this.actual = null;
+        }
+
+        return true;
+    }
+
+    /**
+     * Busca un elemento por su ID.
+     * Complejidad: O(n)
+     */
+    buscarPorId(id) {
+        let actual = this.cabeza;
+
+        while (actual !== null) {
+            if (actual.dato && actual.dato.id === id) {
+                return actual.dato;
+            }
+
+            actual = actual.siguiente;
+        }
+
+        return null;
+    }
+
+    /**
+     * Vacía la lista.
+     */
+    vaciar() {
+        let actual = this.cabeza;
+
+        while (actual !== null) {
+            const siguiente = actual.siguiente;
+            actual.anterior = null;
+            actual.siguiente = null;
+            actual = siguiente;
+        }
+
+        this.cabeza = null;
+        this.cola = null;
+        this.actual = null;
+        this.longitud = 0;
+    }
+
+    /**
+     * Inserta un nodo inmediatamente después del nodo actual.
+     * Complejidad: O(1)
+     */
+    insertarDespuesDeActual(datos) {
+        const nuevoNodo = new NodoDoble(datos);
+
+        // Si la lista está vacía.
+        if (this.cabeza === null) {
+            this.cabeza = nuevoNodo;
+            this.cola = nuevoNodo;
+            this.actual = nuevoNodo;
+            this.longitud++;
+
+            return nuevoNodo;
+        }
+
+        // Si no existe un nodo actual.
+        if (this.actual === null) {
+            return null;
+        }
+
+        const siguiente = this.actual.siguiente;
+
+        // Conectar el nuevo nodo con sus vecinos.
+        nuevoNodo.anterior = this.actual;
+        nuevoNodo.siguiente = siguiente;
+
+        this.actual.siguiente = nuevoNodo;
+
+        if (siguiente !== null) {
+            siguiente.anterior = nuevoNodo;
+        } else {
+            this.cola = nuevoNodo;
+        }
+
+        this.longitud++;
+
+        return nuevoNodo;
+    }
 }
 
 module.exports = ListaDobleNavegacion;
