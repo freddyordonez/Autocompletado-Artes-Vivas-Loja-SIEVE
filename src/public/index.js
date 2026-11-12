@@ -1,4 +1,4 @@
-const ListaDobleNavegacion = require('./models/ListaDobleNavegacion');
+const ListaDobleNavegacion = require('../models/ListaDoble');
 
 /**
  * Módulo principal de ejecución - Avance 4 ABP (Estructura de Datos)
