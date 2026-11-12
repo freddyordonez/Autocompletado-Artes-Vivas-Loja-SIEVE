@@ -1,5 +1,5 @@
 const readline = require('node:readline/promises');
-const ListaDobleNavegacion = require('../models/ListaDobleNavegacion');
+const ListaDobleNavegacion = require('../models/ListaDoble');
 
 /**
  * Interfaz interactiva en consola para la lista doblemente enlazada
