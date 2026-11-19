@@ -4,8 +4,10 @@
   "description": "Autocompletado Turístico de Loja con Política de Caché SIEVE y Listas Dobles - Grupo 4 (UNL)",
   "main": "src/index.js",
   "scripts": {
-    "test": "node --test tests/navegacion.test.js",
-    "start": "node src/index.js"
+    "test": "node --test",
+    "start": "node src/index.js",
+    "benchmark": "node --expose-gc src/benchmarkSort.js",
+    "benchmark:busqueda": "node --expose-gc src/benchmarkBusqueda.js"
   },
   "keywords": [
     "trie",
@@ -15,7 +17,7 @@
     "estructuras-de-datos",
     "grupo-4"
   ],
-  "author": "Grupo 4 - Computación Tercer Ciclo UNL",
+  "author": "Grupo 4 - UNL",
   "license": "ISC",
   "repository": {
     "type": "git",
