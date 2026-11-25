@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autocompletado FIAVL — Loja (SIEVE + Trie)</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Festival de Artes Vivas de Loja</h1>
+      <p>Buscador en tiempo real con Árbol de Prefijos (Trie) y Caché SIEVE</p>
+    </header>
+
+    <section class="search-box">
+      <input id="searchInput" type="text" placeholder="Escribe un lugar, obra o evento (ej. Teatro, Feria, Parque)..." autocomplete="off" />
+      <div id="metrics" class="metrics">Estado: listo</div>
+    </section>
+
+    <ul id="resultsList" class="results"></ul>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
