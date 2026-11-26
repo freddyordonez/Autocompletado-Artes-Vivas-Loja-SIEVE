@@ -2,10 +2,10 @@
   "name": "autocompletado-loja-sieve",
   "version": "1.0.0",
   "description": "Autocompletado Turístico de Loja con Política de Caché SIEVE y Listas Dobles - Grupo 4 (UNL)",
-  "main": "src/index.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "node --test",
-    "start": "node src/index.js",
+    "start": "node src/server.js",
     "benchmark": "node --expose-gc src/benchmarkSort.js",
     "benchmark:busqueda": "node --expose-gc src/benchmarkBusqueda.js"
   },
@@ -22,6 +22,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freddyordonez/Portafolio-de-Estructura-de-Datos.git"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
   }
 }
-

@@ -1,0 +1,10 @@
+* { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+body { margin: 0; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; padding: 2rem; }
+.container { width: 100%; max-width: 720px; }
+header h1 { margin: 0 0 0.4rem; font-size: 1.8rem; color: #38bdf8; }
+header p { margin: 0 0 1.5rem; color: #94a3b8; }
+.search-box input { width: 100%; padding: 0.9rem 1.1rem; font-size: 1rem; border-radius: 10px; border: 1px solid #334155; background: #1e293b; color: #fff; }
+.metrics { margin-top: 0.6rem; font-size: 0.85rem; color: #cbd5e1; }
+.results { list-style: none; padding: 0; margin-top: 1rem; display: grid; gap: 0.6rem; }
+.results li { background: #1e293b; border: 1px solid #334155; padding: 0.85rem 1rem; border-radius: 10px; display: flex; flex-direction: column; gap: 0.25rem; }
+.results span { font-size: 0.85rem; color: #94a3b8; }

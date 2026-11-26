@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autocompletado FIAVL — Loja (SIEVE vs LRU vs FIFO)</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Festival de Artes Vivas de Loja</h1>
+      <p>Buscador en tiempo real con Árbol de Prefijos (Trie) y Comparativa de Cachés (SIEVE, LRU, FIFO)</p>
+      <nav aria-label="Navegación módulos Loja" style="margin-top: 0.75rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="/loja/dashboard.html" style="padding: 0.45rem 0.85rem; border-radius: 6px; background: #0f172a; color: #38bdf8; text-decoration: none; font-weight: 600; border: 1px solid #1e293b;">
+          Dashboard Loja
+        </a>
+        <a href="/loja/destinos.html" style="padding: 0.45rem 0.85rem; border-radius: 6px; background: #0f172a; color: #4ee6aa; text-decoration: none; font-weight: 600; border: 1px solid #1e293b;">
+          Explorar Destinos
+        </a>
+      </nav>
+    </header>
+
+    <section class="search-box">
+      <div class="controls">
+        <input id="searchInput" type="text" placeholder="Escribe un lugar, obra o evento (ej. Teatro, Feria, Parque)..." autocomplete="off" />
+        <select id="policySelect" aria-label="Política de caché">
+          <option value="sieve" selected>SIEVE</option>
+          <option value="lru">LRU</option>
+          <option value="fifo">FIFO</option>
+        </select>
+      </div>
+      <div id="metrics" class="metrics">Estado: listo</div>
+    </section>
+
+    <section class="comparison">
+      <h2>Comparativa de Políticas en Vivo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Política</th>
+            <th>Tamaño</th>
+            <th>Hits</th>
+            <th>Misses</th>
+            <th>Hit Rate</th>
+          </tr>
+        </thead>
+        <tbody id="compareBody">
+          <tr><td>SIEVE</td><td>0 / 256</td><td>0</td><td>0</td><td>0%</td></tr>
+          <tr><td>LRU</td><td>0 / 256</td><td>0</td><td>0</td><td>0%</td></tr>
+          <tr><td>FIFO</td><td>0 / 256</td><td>0</td><td>0</td><td>0%</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <ul id="resultsList" class="results"></ul>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
