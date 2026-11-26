@@ -4,10 +4,10 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="web_dashboard" name="shell-type"/>
-  <title>Explorar Destinos — LOJA EXPLORA</title>
+  <title>Explorar Destinos — LOJA EXPLORA · FIAVL</title>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
   <style>
     @layer base {
@@ -33,6 +33,7 @@
       scrollbar-width: none;
     }
   </style>
+  <link href="/style.css" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
     tailwind.config = {
@@ -40,53 +41,53 @@
       theme: {
         extend: {
           colors: {
-            "on-secondary-fixed": "#001f25",
-            "surface-container-highest": "#273647",
-            "on-secondary": "#00363e",
-            "background": "#051424",
-            "primary": "#8ed5ff",
-            "on-tertiary": "#003825",
-            "secondary-fixed-dim": "#2fd9f4",
-            "error-container": "#93000a",
-            "inverse-primary": "#00668a",
-            "surface": "#051424",
-            "tertiary": "#4ee6aa",
-            "on-tertiary-fixed-variant": "#005137",
-            "error": "#ffb4ab",
-            "surface-dim": "#051424",
-            "outline-variant": "#3e484f",
-            "on-error-container": "#ffdad6",
-            "on-primary-fixed-variant": "#004c69",
-            "on-error": "#690005",
-            "on-primary": "#00354a",
-            "surface-variant": "#273647",
-            "outline": "#87929a",
-            "secondary-fixed": "#a2eeff",
-            "tertiary-container": "#22c990",
-            "tertiary-fixed": "#68fcbf",
-            "secondary": "#5de6ff",
-            "tertiary-fixed-dim": "#45dfa4",
-            "on-surface-variant": "#bdc8d1",
-            "secondary-container": "#00cbe6",
-            "on-primary-container": "#004965",
-            "surface-container-high": "#1c2b3c",
-            "on-surface": "#d4e4fa",
-            "on-tertiary-container": "#004e35",
-            "surface-container-lowest": "#010f1f",
-            "primary-fixed": "#c4e7ff",
-            "primary-container": "#38bdf8",
-            "on-tertiary-fixed": "#002114",
-            "inverse-on-surface": "#233143",
-            "surface-tint": "#7bd0ff",
-            "on-secondary-fixed-variant": "#004e5a",
-            "on-primary-fixed": "#001e2c",
-            "primary-fixed-dim": "#7bd0ff",
-            "on-secondary-container": "#00515d",
-            "surface-container-low": "#0d1c2d",
-            "surface-bright": "#2c3a4c",
-            "inverse-surface": "#d4e4fa",
-            "on-background": "#d4e4fa",
-            "surface-container": "#122131"
+            "background": "#15110E",
+            "surface": "#15110E",
+            "surface-dim": "#110d0a",
+            "surface-bright": "#4A331F",
+            "surface-tint": "#E7B04A",
+            "surface-variant": "#3f2d21",
+            "surface-container-lowest": "#0B0907",
+            "surface-container-low": "#1d1511",
+            "surface-container": "#261a14",
+            "surface-container-high": "#32231a",
+            "surface-container-highest": "#3f2d21",
+            "on-background": "#F7EFE2",
+            "on-surface": "#F7EFE2",
+            "on-surface-variant": "#D6C7AF",
+            "inverse-surface": "#F7EFE2",
+            "inverse-on-surface": "#2a1d15",
+            "outline": "#B8A894",
+            "outline-variant": "#5a4636",
+            "primary": "#F2C46D",
+            "on-primary": "#3a2400",
+            "primary-container": "#E7B04A",
+            "on-primary-container": "#2b1a05",
+            "inverse-primary": "#8a5a0a",
+            "primary-fixed": "#FFE3A8",
+            "primary-fixed-dim": "#F2C46D",
+            "on-primary-fixed": "#251500",
+            "on-primary-fixed-variant": "#5c3d00",
+            "secondary": "#F6D28B",
+            "on-secondary": "#3a0508",
+            "secondary-container": "#B1262C",
+            "on-secondary-container": "#FFDAD6",
+            "secondary-fixed": "#FFDAD6",
+            "secondary-fixed-dim": "#E8575D",
+            "on-secondary-fixed": "#410005",
+            "on-secondary-fixed-variant": "#7A1219",
+            "tertiary": "#5FD0B5",
+            "on-tertiary": "#00382f",
+            "tertiary-container": "#2F9E8F",
+            "on-tertiary-container": "#d6fff4",
+            "tertiary-fixed": "#8cf3d9",
+            "tertiary-fixed-dim": "#5FD0B5",
+            "on-tertiary-fixed": "#00201a",
+            "on-tertiary-fixed-variant": "#005046",
+            "error": "#FF8A8F",
+            "on-error": "#4a0006",
+            "error-container": "#7A1219",
+            "on-error-container": "#FFDAD6"
           },
           borderRadius: {
             "DEFAULT": "0.25rem",
@@ -107,18 +108,18 @@
             "space-xl": "2.5rem"
           },
           fontFamily: {
-            "code-body": ["JetBrains Mono"],
-            "code-display": ["JetBrains Mono"],
-            "body-md": ["Inter"],
-            "headline-md": ["Inter"],
-            "body-sm": ["Inter"],
-            "headline-sm": ["Inter"],
-            "display-hero": ["Inter"],
-            "label-code": ["JetBrains Mono"],
-            "headline-lg-mobile": ["Inter"],
-            "body-lg": ["Inter"],
-            "headline-lg": ["Inter"],
-            "display-hero-mobile": ["Inter"]
+            "code-body": ["JetBrains Mono", "ui-monospace", "Consolas", "monospace"],
+            "code-display": ["JetBrains Mono", "ui-monospace", "Consolas", "monospace"],
+            "body-md": ["Inter", "system-ui", "sans-serif"],
+            "headline-md": ["Playfair Display", "Georgia", "serif"],
+            "body-sm": ["Inter", "system-ui", "sans-serif"],
+            "headline-sm": ["Inter", "system-ui", "sans-serif"],
+            "display-hero": ["Playfair Display", "Georgia", "serif"],
+            "label-code": ["JetBrains Mono", "ui-monospace", "Consolas", "monospace"],
+            "headline-lg-mobile": ["Playfair Display", "Georgia", "serif"],
+            "body-lg": ["Inter", "system-ui", "sans-serif"],
+            "headline-lg": ["Playfair Display", "Georgia", "serif"],
+            "display-hero-mobile": ["Inter", "system-ui", "sans-serif"]
           },
           fontSize: {
             "code-body": ["0.8125rem", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
@@ -138,8 +139,11 @@
       }
     };
   </script>
+  <style>h1 { font-style: italic; }</style>
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased">
+  <div aria-hidden="true" class="fx-curtain-slim"></div>
+  <div aria-hidden="true" class="fx-lights-bar"></div>
   <aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
     <div class="flex flex-col">
       <div class="h-16 px-space-md flex items-center justify-between bg-surface-container-low">
@@ -152,14 +156,23 @@
             <span class="font-label-code text-label-code text-primary uppercase tracking-widest mt-space-xs">Data Platform</span>
           </div>
         </div>
-        <span class="font-label-code text-label-code px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary">v2.4 Core</span>
+        <span class="font-label-code text-label-code px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary">FIAVL 2026</span>
       </div>
 
       <div class="overflow-y-auto px-space-sm py-space-sm flex flex-col gap-space-md">
         <div class="flex flex-col gap-space-xs">
+          <span class="font-label-code text-label-code uppercase tracking-wider text-outline px-space-sm py-space-xs">Festival FIAVL</span>
+          <nav class="flex flex-col gap-1">
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg border border-primary/40 text-primary hover:bg-primary-container hover:text-on-primary-container transition-all font-body-sm text-body-sm font-semibold" data-path="volver-escenario" href="/index.html">
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+              Volver al Escenario (Buscador)
+            </a>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-space-xs">
           <span class="font-label-code text-label-code uppercase tracking-wider text-outline px-space-sm py-space-xs">Sección Principal</span>
           <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold">
-            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="inicio-dashboard" href="dashboard.html">
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="inicio-dashboard" href="/loja/dashboard.html">
               <span class="material-symbols-outlined text-[18px]">grid_view</span>
               Inicio (Dashboard)
             </a>
@@ -181,7 +194,7 @@
         <div class="flex flex-col gap-space-xs">
           <span class="font-label-code text-label-code uppercase tracking-wider text-outline px-space-sm py-space-xs">Exploración</span>
           <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold">
-            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-[0_0_12px_rgba(56,189,248,0.25)] border border-cyan-500/30 transition-all font-body-sm text-body-sm" data-path="explorar-destinos" href="destinos.html">
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-[0_0_12px_rgba(231,176,74,0.25)] border border-primary/30 transition-all font-body-sm text-body-sm" data-path="explorar-destinos" href="/loja/destinos.html">
               <span class="material-symbols-outlined text-[18px]">explore</span>
               Explorar Destinos
             </a>
@@ -252,12 +265,16 @@
       </div>
 
       <div class="flex items-center gap-space-lg">
-        <div class="flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-container-low font-code-body text-code-body">
-          <span class="text-outline">RAM:</span>
-          <span class="text-on-surface font-semibold">64MB / 128MB</span>
+        <a class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/50 text-primary whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-all font-body-sm text-body-sm font-semibold" href="/index.html" title="Volver al escenario FIAVL (buscador)">
+          <span class="material-symbols-outlined text-[16px]">theater_comedy</span>
+          <span class="hidden xl:inline">Escenario FIAVL</span>
+        </a>
+        <div class="flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-container-low font-code-body text-code-body whitespace-nowrap">
+          <span class="text-outline">Caché:</span>
+          <span class="text-on-surface font-semibold">256</span>
           <span class="text-outline-variant">•</span>
           <span class="text-outline">SIEVE:</span>
-          <span class="text-tertiary font-semibold">94.6% HIT</span>
+          <span class="text-tertiary font-semibold" id="hdr-sieve-rate">— HIT</span>
         </div>
         <button class="relative p-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button">
           <span class="material-symbols-outlined text-[20px]">notifications</span>
@@ -265,8 +282,8 @@
         </button>
         <div class="flex items-center gap-space-sm pl-space-xs">
           <div class="flex flex-col text-right">
-            <span class="font-body-sm text-body-sm font-semibold text-on-surface leading-none">Dr. J. Carrión</span>
-            <span class="font-label-code text-label-code text-secondary leading-none mt-1">Admin Académico</span>
+            <span class="font-body-sm text-body-sm font-semibold text-on-surface leading-none">Grupo 4</span>
+            <span class="font-label-code text-label-code text-secondary leading-none mt-1">Estructura de Datos</span>
           </div>
           <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
@@ -280,7 +297,7 @@
         <!-- Satellite Map Geographic Canvas Background -->
         <div class="fixed inset-0 left-72 pointer-events-none z-0 overflow-hidden">
           <div class="w-full h-full bg-cover bg-center filter saturate-75 brightness-75 scale-105 transition-transform duration-1000" data-alt="Realistic aerial satellite map imagery of Loja province Ecuador showing the Andean mountain topography, Vilcabamba valley, Podocarpus mountain range, inter-Andean ravines and terrain contours with deep obsidian navy tinting and subtle geographical relief." data-location="Loja, Ecuador, Andes Mountains topography aerial satellite view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCml8Uc-PBDzhhxOV-LhinHh3__NKO_V6Kthav4G9jbm2dhGXXN_6s9RstNlrcDUDI-tfMcVzG-oBjt5_6RnP-hmDve_0iRHFQz3TQKdNikTMhUBcPV66-Z4pBWOt5Uscl8W4G5P9QvrGGU8BUnDWt6gx8uLg1PqB6FjThrKUHqsCcqGegIkae0EZ5-4wE8ldczkqwN2f76l41UHildm3pB9NVSzjmp-ynNi-aZnQ')"></div>
-          <div class="absolute inset-0 bg-[#0B1220]/85 backdrop-blur-[2px]"></div>
+          <div class="absolute inset-0 bg-[#0B0907]/85 backdrop-blur-[2px]"></div>
           <div class="absolute inset-0 bg-gradient-to-b from-surface via-transparent to-surface/90"></div>
           <div class="absolute -top-32 right-1/4 w-[700px] h-[700px] bg-secondary/5 rounded-full blur-[140px] pointer-events-none"></div>
           <div class="absolute -bottom-24 left-1/3 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -293,7 +310,7 @@
             <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
               <div>
                 <div class="flex items-center gap-space-xs font-label-code text-label-code text-primary uppercase tracking-widest mb-1.5">
-                  <span class="inline-block w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_#5de6ff]"></span>
+                  <span class="inline-block w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_#F6D28B]"></span>
                   <span>Cartografía Turística / Nódulo Provincial</span>
                   <span class="text-outline-variant">•</span>
                   <span class="text-tertiary">GPS -3.9931, -79.2045</span>
@@ -310,7 +327,7 @@
               <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
                 <div class="relative min-w-[320px] flex items-center">
                   <span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">search</span>
-                  <input class="w-full pl-11 pr-16 py-2.5 rounded-xl bg-surface-container/90 backdrop-blur-md text-on-surface placeholder:text-outline font-body-sm text-body-sm shadow-md focus:outline-none focus:bg-surface-container-high focus:shadow-[0_0_20px_-2px_rgba(56,189,248,0.25)] transition-all" id="search-destinations" placeholder="Buscar por nombre, barrio, coordenadas..." type="text"/>
+                  <input class="w-full pl-11 pr-16 py-2.5 rounded-xl bg-surface-container/90 backdrop-blur-md text-on-surface placeholder:text-outline font-body-sm text-body-sm shadow-md focus:outline-none focus:bg-surface-container-high focus:shadow-[0_0_20px_-2px_rgba(231,176,74,0.25)] transition-all" id="search-destinations" placeholder="Buscar por nombre, barrio, coordenadas..." type="text"/>
                   <span class="absolute right-3 px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-label-code select-none">⌘K</span>
                 </div>
                 <div class="hidden xl:flex items-center gap-space-sm px-space-md py-2.5 rounded-xl bg-surface-container-low/90 backdrop-blur-md font-code-body text-code-body shadow-sm">
@@ -325,7 +342,7 @@
 
             <!-- Pill Filter Bar -->
             <div class="flex items-center gap-2 overflow-x-auto py-1 scrollbar-none">
-              <button class="filter-btn active-pill px-4 py-2 rounded-full font-body-sm text-body-sm font-semibold flex items-center gap-2 transition-all bg-primary-container text-on-primary-container shadow-[0_0_15px_-3px_rgba(56,189,248,0.35)]" data-filter="all" type="button">
+              <button class="filter-btn active-pill px-4 py-2 rounded-full font-body-sm text-body-sm font-semibold flex items-center gap-2 transition-all bg-primary-container text-on-primary-container shadow-[0_0_15px_-3px_rgba(231,176,74,0.35)]" data-filter="all" type="button">
                 <span>Todos</span>
                 <span class="px-1.5 py-0.5 rounded-full bg-surface-container-lowest/40 font-label-code text-[0.625rem] text-on-primary-container">6</span>
               </button>
@@ -364,9 +381,9 @@
           <!-- Tourism Destinations Bento Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg w-full" id="destinations-grid">
             <!-- Card 1: Parque Recreacional Jipiro -->
-            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(56,189,248,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Parque" data-id="1">
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Parque" data-id="1">
               <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
-                <img alt="Parque Recreacional Jipiro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Parque Recreacional Jipiro in Loja Ecuador showcasing miniature world architectural replicas such as St Basil Cathedral and Pagoda across tranquil recreational lake with paddle boats under clear Andean blue skies surrounded by green willow trees." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC9j1QXScAP209OAV4KaALZnOuE4KWdCZX036lT7J6ASiisfckPERISj9DWEDrR_ZBjbi9pFAhA4_ZdoJ6Xu27CdYPm_Btfq8_t3qpHbBftBjbsdZ_g1HzCOD5zVUBoUrtFDs91Hvjb753y4wkqmTJ4kDXYIqv28thWHDzd0Pk06AhpO4H2ow6yAJGMPafoVCc8M4S7874LsWbyfC46aui_syB-nqX24y_FPyrCg"/>
+                <img onerror="this.style.display='none'" alt="Parque Recreacional Jipiro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Parque Recreacional Jipiro in Loja Ecuador showcasing miniature world architectural replicas such as St Basil Cathedral and Pagoda across tranquil recreational lake with paddle boats under clear Andean blue skies surrounded by green willow trees." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC9j1QXScAP209OAV4KaALZnOuE4KWdCZX036lT7J6ASiisfckPERISj9DWEDrR_ZBjbi9pFAhA4_ZdoJ6Xu27CdYPm_Btfq8_t3qpHbBftBjbsdZ_g1HzCOD5zVUBoUrtFDs91Hvjb753y4wkqmTJ4kDXYIqv28thWHDzd0Pk06AhpO4H2ow6yAJGMPafoVCc8M4S7874LsWbyfC46aui_syB-nqX24y_FPyrCg"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
                 <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-tertiary font-label-code text-label-code tracking-wider uppercase shadow-md">
                   <span class="material-symbols-outlined text-[15px]">park</span>
@@ -405,7 +422,7 @@
                       <span>Detalles</span>
                       <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                     </button>
-                    <button aria-label="Reproducir o enfocar en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(56,189,248,0.4)] transition-all" onclick="openMapModal('Parque Recreacional Jipiro', 'Av. Salvador Bustamante Celi', -3.9715, -79.2008, 'Parque Temático')" type="button">
+                    <button aria-label="Reproducir o enfocar en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Parque Recreacional Jipiro', 'Av. Salvador Bustamante Celi', -3.9715, -79.2008, 'Parque Temático')" type="button">
                       <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
                     </button>
                   </div>
@@ -414,9 +431,9 @@
             </article>
 
             <!-- Card 2: Puerta de la Ciudad -->
-            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(56,189,248,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Sitio Histórico" data-id="2">
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Sitio Histórico" data-id="2">
               <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
-                <img alt="Puerta de la Ciudad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Puerta de la Ciudad in Loja Ecuador at dusk with medieval colonial stone castle illumination, historic drawbridge, illuminated clock tower over the entrance avenue, reflecting warm lanterns against deep midnight blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApGX-ddDKX-pEMsQR4d2GivdDmyBXnsSBG0ZIyFTvjImWdJMwSNuVFEUXWMGN2iZguJ4Lzq9QWuepYtl-C98ijSzTaaU5pk9NZ6tUirmqnkw6Ttywjo7LhITNNzJAkKSBbcxjrFwviEdefrLxJuRZZyPx5OqPmaLlK93HJIrd6pQmhfLi3rePtmQVI5OO6BhGccrYmXgy_z_U7cQtE8aFFOjsZN0nV1g0TpugsjQ"/>
+                <img onerror="this.style.display='none'" alt="Puerta de la Ciudad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Puerta de la Ciudad in Loja Ecuador at dusk with medieval colonial stone castle illumination, historic drawbridge, illuminated clock tower over the entrance avenue, reflecting warm lanterns against deep midnight blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApGX-ddDKX-pEMsQR4d2GivdDmyBXnsSBG0ZIyFTvjImWdJMwSNuVFEUXWMGN2iZguJ4Lzq9QWuepYtl-C98ijSzTaaU5pk9NZ6tUirmqnkw6Ttywjo7LhITNNzJAkKSBbcxjrFwviEdefrLxJuRZZyPx5OqPmaLlK93HJIrd6pQmhfLi3rePtmQVI5OO6BhGccrYmXgy_z_U7cQtE8aFFOjsZN0nV1g0TpugsjQ"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
                 <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-code text-label-code tracking-wider uppercase shadow-md">
                   <span class="material-symbols-outlined text-[15px]">account_balance</span>
@@ -455,7 +472,7 @@
                       <span>Detalles</span>
                       <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                     </button>
-                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(56,189,248,0.4)] transition-all" onclick="openMapModal('Puerta de la Ciudad', 'Av. Gran Colombia y 18 de Noviembre', -3.9878, -79.2043, 'Sitio Histórico')" type="button">
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Puerta de la Ciudad', 'Av. Gran Colombia y 18 de Noviembre', -3.9878, -79.2043, 'Sitio Histórico')" type="button">
                       <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
                     </button>
                   </div>
@@ -464,9 +481,9 @@
             </article>
 
             <!-- Card 3: Parque Eólico Villonaco -->
-            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(56,189,248,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Naturaleza" data-id="3">
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Naturaleza" data-id="3">
               <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
-                <img alt="Parque Eólico Villonaco" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Villonaco Wind Farm in Loja Ecuador featuring monumental white wind turbines standing majestically along high Andean mountain ridge at sunset with golden orange light sweeping over Catamayo and Loja valleys." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOPfpgOI_nQslLGF9fa8DZQv-1SdCx8g7Fk36GCCh2H7eozgpD6WsTKDcFuaFHaVSO-sbmS5WTvuks8Dav-mbkGQpPMhbb6PM5jmFEsyrDqV1Z2Qam4uw1pd6Ya_9QWnKSuPxBUmS0NiIrcqFPPVn7WMWdlxtIg9dVaeE5fsUHzm5RPpLMg0t_cdAYr9DzdZsR-wB0_7IOH9ucEqlVDkeoh_4cYl8RQGPtCxK-og"/>
+                <img onerror="this.style.display='none'" alt="Parque Eólico Villonaco" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Villonaco Wind Farm in Loja Ecuador featuring monumental white wind turbines standing majestically along high Andean mountain ridge at sunset with golden orange light sweeping over Catamayo and Loja valleys." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOPfpgOI_nQslLGF9fa8DZQv-1SdCx8g7Fk36GCCh2H7eozgpD6WsTKDcFuaFHaVSO-sbmS5WTvuks8Dav-mbkGQpPMhbb6PM5jmFEsyrDqV1Z2Qam4uw1pd6Ya_9QWnKSuPxBUmS0NiIrcqFPPVn7WMWdlxtIg9dVaeE5fsUHzm5RPpLMg0t_cdAYr9DzdZsR-wB0_7IOH9ucEqlVDkeoh_4cYl8RQGPtCxK-og"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
                 <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-secondary font-label-code text-label-code tracking-wider uppercase shadow-md">
                   <span class="material-symbols-outlined text-[15px]">wind_power</span>
@@ -505,7 +522,7 @@
                       <span>Detalles</span>
                       <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                     </button>
-                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(56,189,248,0.4)] transition-all" onclick="openMapModal('Parque Eólico Villonaco', 'Cerro Villonaco', -3.9961, -79.2619, 'Naturaleza & Tech')" type="button">
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Parque Eólico Villonaco', 'Cerro Villonaco', -3.9961, -79.2619, 'Naturaleza & Tech')" type="button">
                       <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
                     </button>
                   </div>
@@ -514,9 +531,9 @@
             </article>
 
             <!-- Card 4: Catedral de Loja y Parque Central -->
-            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(56,189,248,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Patrimonio Religioso" data-id="4">
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Patrimonio Religioso" data-id="4">
               <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
-                <img alt="Catedral de Loja y Parque Central" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Catedral de Loja and Central Independence Square in Ecuador with brightly illuminated colonial facade, grand bell towers, palm trees, historic central bronze fountain, and pedestrians walking during blue hour." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv-txpL8aiDMMOhoEhGww41v7outOgAW1kowc8o7qzsSgugXLT69FwWs3dIFm5PtohUR75hJEuMjeDG4ln93Ln_CVn4w77vAIrKffLFZE9uIwPtwysuqvkqB5RVh84YDxlqlPjSsm6kKPlVZ2gAmO4WC8UgIZINvs6Y5KsoOFqFagyh05EolVuBJx5k9GlrwzuzgRhTQvuZKAbgoqQVskzd2FaeWsMFromb45JYw"/>
+                <img onerror="this.style.display='none'" alt="Catedral de Loja y Parque Central" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Catedral de Loja and Central Independence Square in Ecuador with brightly illuminated colonial facade, grand bell towers, palm trees, historic central bronze fountain, and pedestrians walking during blue hour." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv-txpL8aiDMMOhoEhGww41v7outOgAW1kowc8o7qzsSgugXLT69FwWs3dIFm5PtohUR75hJEuMjeDG4ln93Ln_CVn4w77vAIrKffLFZE9uIwPtwysuqvkqB5RVh84YDxlqlPjSsm6kKPlVZ2gAmO4WC8UgIZINvs6Y5KsoOFqFagyh05EolVuBJx5k9GlrwzuzgRhTQvuZKAbgoqQVskzd2FaeWsMFromb45JYw"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
                 <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary-fixed font-label-code text-label-code tracking-wider uppercase shadow-md">
                   <span class="material-symbols-outlined text-[15px]">church</span>
@@ -555,7 +572,7 @@
                       <span>Detalles</span>
                       <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                     </button>
-                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(56,189,248,0.4)] transition-all" onclick="openMapModal('Catedral de Loja', 'Parque Central', -3.9984, -79.2045, 'Patrimonio Religioso')" type="button">
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Catedral de Loja', 'Parque Central', -3.9984, -79.2045, 'Patrimonio Religioso')" type="button">
                       <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
                     </button>
                   </div>
@@ -564,9 +581,9 @@
             </article>
 
             <!-- Card 5: Parque Nacional Podocarpus - Cajanuma -->
-            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(56,189,248,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Naturaleza" data-id="5">
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Naturaleza" data-id="5">
               <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
-                <img alt="Parque Nacional Podocarpus - Cajanuma" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Podocarpus National Park Cajanuma entrance in Loja Ecuador showcasing ancient cloud forest with bromeliads, mossy romerillo podocarpus trees, mist swirling through lush Andean subtropical vegetation and high mountain hiking trail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeUuw0cPyKjdJ308J-3exLWpv0Mlmsy4660Gq73yPHWKqYI2f47ndZNvhB9ypKPF9awHAggeq05tS11YeyRvnuTDVqTkElQPKNz73_UEM7HPQMlWGJnpWWmTbNWJG6WlP6g_EFkI-2rFt590pn_L1T4Gxly7sN6oVUwOd3TFmqCapDY6qzw1w9wG4S9wUhBcsoBlzwhKFqPk6c1mhVwTmJ_z8dlJPCv0KNvPJUkQ"/>
+                <img onerror="this.style.display='none'" alt="Parque Nacional Podocarpus - Cajanuma" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Podocarpus National Park Cajanuma entrance in Loja Ecuador showcasing ancient cloud forest with bromeliads, mossy romerillo podocarpus trees, mist swirling through lush Andean subtropical vegetation and high mountain hiking trail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeUuw0cPyKjdJ308J-3exLWpv0Mlmsy4660Gq73yPHWKqYI2f47ndZNvhB9ypKPF9awHAggeq05tS11YeyRvnuTDVqTkElQPKNz73_UEM7HPQMlWGJnpWWmTbNWJG6WlP6g_EFkI-2rFt590pn_L1T4Gxly7sN6oVUwOd3TFmqCapDY6qzw1w9wG4S9wUhBcsoBlzwhKFqPk6c1mhVwTmJ_z8dlJPCv0KNvPJUkQ"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
                 <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-tertiary-fixed-dim font-label-code text-label-code tracking-wider uppercase shadow-md">
                   <span class="material-symbols-outlined text-[15px]">forest</span>
@@ -605,7 +622,7 @@
                       <span>Detalles</span>
                       <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                     </button>
-                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(56,189,248,0.4)] transition-all" onclick="openMapModal('Parque Nacional Podocarpus - Cajanuma', 'Sector Cajanuma', -4.1166, -79.1666, 'Reserva de Biosfera')" type="button">
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Parque Nacional Podocarpus - Cajanuma', 'Sector Cajanuma', -4.1166, -79.1666, 'Reserva de Biosfera')" type="button">
                       <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
                     </button>
                   </div>
@@ -614,9 +631,9 @@
             </article>
 
             <!-- Card 6: Calle Lourdes y San Sebastián -->
-            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(56,189,248,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Cultura" data-id="6">
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Cultura" data-id="6">
               <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
-                <img alt="Calle Lourdes y Barrio San Sebastián" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Calle Lourdes in traditional San Sebastian neighborhood Loja Ecuador showcasing authentic narrow cobblestone lane with brightly painted blue and white colonial houses wooden balconies blooming bougainvillea flowers and cozy specialty coffee shops." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSp8i5Hm6XmNdQRZDjkYv-Qdh67sv06kTtUTN81XvnrAxBmc0HHXBsDbUFMUkQKytPWFQ4uRT2OmUtQExMmX6cqE16_xbrTizJDq7WX0QJ4it3dHdIn-KHu7ysIrgG2CiTGzZIUwh-7Tf_LIFNOyAoi84STA-UswiiRrofzPgzQPp7PAlKkgQxi6do6nwAOoGPJ_6TRAZCfTXW6TWfyOsqNELrEWDOkv9cjBwdqg"/>
+                <img onerror="this.style.display='none'" alt="Calle Lourdes y Barrio San Sebastián" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Calle Lourdes in traditional San Sebastian neighborhood Loja Ecuador showcasing authentic narrow cobblestone lane with brightly painted blue and white colonial houses wooden balconies blooming bougainvillea flowers and cozy specialty coffee shops." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSp8i5Hm6XmNdQRZDjkYv-Qdh67sv06kTtUTN81XvnrAxBmc0HHXBsDbUFMUkQKytPWFQ4uRT2OmUtQExMmX6cqE16_xbrTizJDq7WX0QJ4it3dHdIn-KHu7ysIrgG2CiTGzZIUwh-7Tf_LIFNOyAoi84STA-UswiiRrofzPgzQPp7PAlKkgQxi6do6nwAOoGPJ_6TRAZCfTXW6TWfyOsqNELrEWDOkv9cjBwdqg"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
                 <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-secondary-fixed font-label-code text-label-code tracking-wider uppercase shadow-md">
                   <span class="material-symbols-outlined text-[15px]">palette</span>
@@ -655,7 +672,7 @@
                       <span>Detalles</span>
                       <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                     </button>
-                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(56,189,248,0.4)] transition-all" onclick="openMapModal('Calle Lourdes y San Sebastián', 'Calle Lourdes', -4.0044, -79.2062, 'Cultura')" type="button">
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Calle Lourdes y San Sebastián', 'Calle Lourdes', -4.0044, -79.2062, 'Cultura')" type="button">
                       <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
                     </button>
                   </div>
@@ -701,7 +718,7 @@
                   </div>
                   <div class="relative flex items-center justify-center">
                     <span class="w-12 h-12 rounded-full bg-primary/25 animate-ping absolute"></span>
-                    <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container shadow-[0_0_20px_#38bdf8] flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container shadow-[0_0_20px_#E7B04A] flex items-center justify-center">
                       <span class="material-symbols-outlined text-[22px]">location_on</span>
                     </div>
                   </div>
@@ -830,10 +847,10 @@
         filterBtns.forEach((btn) => {
           btn.addEventListener('click', () => {
             filterBtns.forEach((b) => {
-              b.classList.remove('active-pill', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_15px_-3px_rgba(56,189,248,0.35)]');
+              b.classList.remove('active-pill', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_15px_-3px_rgba(231,176,74,0.35)]');
               b.classList.add('text-on-surface-variant', 'bg-surface-container/70');
             });
-            btn.classList.add('active-pill', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_15px_-3px_rgba(56,189,248,0.35)]');
+            btn.classList.add('active-pill', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_15px_-3px_rgba(231,176,74,0.35)]');
             btn.classList.remove('text-on-surface-variant', 'bg-surface-container/70');
 
             activeCategory = btn.getAttribute('data-filter') || 'all';
@@ -984,6 +1001,45 @@
         }
       </script>
     </main>
+    <footer class="relative z-10 border-t-2 border-primary-container bg-gradient-to-b from-[#7A1219] to-[#4a0a10] px-space-md py-3 text-center">
+      <p class="font-label-code text-label-code uppercase tracking-[0.22em] text-secondary">UNIVERSIDAD NACIONAL DE LOJA · COMPUTACIÓN · ESTRUCTURA DE DATOS</p>
+      <p class="font-body-sm text-body-sm text-on-surface/70 mt-1">Festival Internacional de Artes Vivas de Loja · Grupo 4 · Septiembre 2026 – Febrero 2027</p>
+    </footer>
   </div>
+
+  <script>
+    /* Telemetría ligera compartida: lee /api/comparativa y actualiza el indicador SIEVE del encabezado. */
+    (function () {
+      var headerRate = document.getElementById('hdr-sieve-rate');
+      function pct(st) { return Math.max(0, Math.min(100, parseFloat(st && st.hitRate) || 0)); }
+      function setText(id, v) { var el = document.getElementById(id); if (el) el.textContent = v; }
+      function paint(comp) {
+        if (!comp) return;
+        if (headerRate && comp.sieve) headerRate.textContent = pct(comp.sieve) + '% HIT';
+        ['sieve', 'lru', 'fifo'].forEach(function (k) {
+          var st = comp[k];
+          if (!st) return;
+          setText('tel-' + k + '-rate', pct(st));
+          setText('tel-' + k + '-hits', st.hits);
+          setText('tel-' + k + '-misses', st.misses);
+          setText('tel-' + k + '-size', st.size + ' / ' + st.capacity);
+          var bar = document.getElementById('tel-' + k + '-bar');
+          if (bar) bar.style.width = pct(st) + '%';
+        });
+        setText('tel-status', 'En vivo desde /api/comparativa · actualiza cada 5 s');
+      }
+      function load() {
+        fetch('/api/comparativa')
+          .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+          .then(paint)
+          .catch(function () {
+            if (headerRate) headerRate.textContent = 'sin datos';
+            setText('tel-status', 'Sin conexión con /api/comparativa: inicia el servidor (npm start) para ver métricas reales.');
+          });
+      }
+      load();
+      setInterval(load, 5000);
+    })();
+  </script>
 </body>
 </html>
