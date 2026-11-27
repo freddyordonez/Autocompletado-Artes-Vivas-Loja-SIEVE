@@ -291,9 +291,9 @@ La evicción basada en el bit de visita y el puntero `hand` minimiza la latencia
 
 | | | |
 |:--:|:--:|:--:|
-| <img src="assets/loja/puerta_ciudad.jpeg" alt="Puerta de la Ciudad"/> | <img src="assets/loja/catedral.jpeg" alt="Catedral de Loja"/> | <img src="assets/loja/plaza-parque-central.jpeg" alt="Parque Central"/> |
+| <img src="assets/loja/puerta_ciudad.jpeg" alt="Puerta de la Ciudad"/> | <img src="assets/loja/catedral.jpeg" alt="Catedral de Loja"/> | <img src="assets/loja/plaza-parque-central.jpg" alt="Parque Central"/> |
 | <sub>Puerta de la Ciudad</sub> | <sub>Catedral</sub> | <sub>Parque Central</sub> |
-| <img src="assets/loja/calle_lourdes.png" alt="Calle Lourdes"/> | <img src="assets/loja/plaza_independencia.jpeg" alt="Plaza de la Independencia"/> | <img src="assets/loja/parque_jipiro.jpeyg" alt="Parque Jipiro"/> |
+| <img src="assets/loja/calle_lourdes.png" alt="Calle Lourdes"/> | <img src="assets/loja/plaza_independencia.jpeg" alt="Plaza de la Independencia"/> | <img src="assets/loja/parque_jipiro.jpeg" alt="Parque Jipiro"/> |
 | <sub>Calle Lourdes</sub> | <sub>Plaza de la Independencia</sub> | <sub>Vista panorámica</sub> |
 
 <sub>Fotografías: indicar autor y fuente de cada imagen.</sub>
