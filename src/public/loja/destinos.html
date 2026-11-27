@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_dashboard" name="shell-type"/>
+  <title>Explorar Destinos — LOJA EXPLORA · FIAVL</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+  <link href="/style.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#15110E",
+            "surface": "#15110E",
+            "surface-dim": "#110d0a",
+            "surface-bright": "#4A331F",
+            "surface-tint": "#E7B04A",
+            "surface-variant": "#3f2d21",
+            "surface-container-lowest": "#0B0907",
+            "surface-container-low": "#1d1511",
+            "surface-container": "#261a14",
+            "surface-container-high": "#32231a",
+            "surface-container-highest": "#3f2d21",
+            "on-background": "#F7EFE2",
+            "on-surface": "#F7EFE2",
+            "on-surface-variant": "#D6C7AF",
+            "inverse-surface": "#F7EFE2",
+            "inverse-on-surface": "#2a1d15",
+            "outline": "#B8A894",
+            "outline-variant": "#5a4636",
+            "primary": "#F2C46D",
+            "on-primary": "#3a2400",
+            "primary-container": "#E7B04A",
+            "on-primary-container": "#2b1a05",
+            "inverse-primary": "#8a5a0a",
+            "primary-fixed": "#FFE3A8",
+            "primary-fixed-dim": "#F2C46D",
+            "on-primary-fixed": "#251500",
+            "on-primary-fixed-variant": "#5c3d00",
+            "secondary": "#F6D28B",
+            "on-secondary": "#3a0508",
+            "secondary-container": "#B1262C",
+            "on-secondary-container": "#FFDAD6",
+            "secondary-fixed": "#FFDAD6",
+            "secondary-fixed-dim": "#E8575D",
+            "on-secondary-fixed": "#410005",
+            "on-secondary-fixed-variant": "#7A1219",
+            "tertiary": "#5FD0B5",
+            "on-tertiary": "#00382f",
+            "tertiary-container": "#2F9E8F",
+            "on-tertiary-container": "#d6fff4",
+            "tertiary-fixed": "#8cf3d9",
+            "tertiary-fixed-dim": "#5FD0B5",
+            "on-tertiary-fixed": "#00201a",
+            "on-tertiary-fixed-variant": "#005046",
+            "error": "#FF8A8F",
+            "on-error": "#4a0006",
+            "error-container": "#7A1219",
+            "on-error-container": "#FFDAD6"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "margin-desktop": "3.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.25rem",
+            "space-sm": "0.5rem",
+            "margin-tablet": "2rem",
+            "gutter-desktop": "2rem",
+            "margin": "1rem",
+            "space-xl": "2.5rem"
+          },
+          fontFamily: {
+            "code-body": ["JetBrains Mono", "ui-monospace", "Consolas", "monospace"],
+            "code-display": ["JetBrains Mono", "ui-monospace", "Consolas", "monospace"],
+            "body-md": ["Inter", "system-ui", "sans-serif"],
+            "headline-md": ["Playfair Display", "Georgia", "serif"],
+            "body-sm": ["Inter", "system-ui", "sans-serif"],
+            "headline-sm": ["Inter", "system-ui", "sans-serif"],
+            "display-hero": ["Playfair Display", "Georgia", "serif"],
+            "label-code": ["JetBrains Mono", "ui-monospace", "Consolas", "monospace"],
+            "headline-lg-mobile": ["Playfair Display", "Georgia", "serif"],
+            "body-lg": ["Inter", "system-ui", "sans-serif"],
+            "headline-lg": ["Playfair Display", "Georgia", "serif"],
+            "display-hero-mobile": ["Inter", "system-ui", "sans-serif"]
+          },
+          fontSize: {
+            "code-body": ["0.8125rem", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
+            "code-display": ["1rem", { lineHeight: "1.5", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-md": ["0.9375rem", { lineHeight: "1.55", letterSpacing: "0", fontWeight: "400" }],
+            "headline-md": ["1.5rem", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-sm": ["0.8125rem", { lineHeight: "1.5", letterSpacing: "0.01em", fontWeight: "400" }],
+            "headline-sm": ["1.125rem", { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" }],
+            "display-hero": ["3.5rem", { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "800" }],
+            "label-code": ["0.6875rem", { lineHeight: "1.2", letterSpacing: "0.06em", fontWeight: "600" }],
+            "headline-lg-mobile": ["1.75rem", { lineHeight: "1.25", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "body-lg": ["1.125rem", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
+            "headline-lg": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "display-hero-mobile": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "800" }]
+          }
+        }
+      }
+    };
+  </script>
+  <style>h1 { font-style: italic; }</style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+  <div aria-hidden="true" class="fx-curtain-slim"></div>
+  <div aria-hidden="true" class="fx-lights-bar"></div>
+  <aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="flex flex-col">
+      <div class="h-16 px-space-md flex items-center justify-between bg-surface-container-low">
+        <div class="flex items-center gap-space-sm">
+          <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[22px]">hub</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface leading-none">LOJA EXPLORA</span>
+            <span class="font-label-code text-label-code text-primary uppercase tracking-widest mt-space-xs">Data Platform</span>
+          </div>
+        </div>
+        <span class="font-label-code text-label-code px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary">FIAVL 2026</span>
+      </div>
+
+      <div class="overflow-y-auto px-space-sm py-space-sm flex flex-col gap-space-md">
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-code text-label-code uppercase tracking-wider text-outline px-space-sm py-space-xs">Festival FIAVL</span>
+          <nav class="flex flex-col gap-1">
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg border border-primary/40 text-primary hover:bg-primary-container hover:text-on-primary-container transition-all font-body-sm text-body-sm font-semibold" data-path="volver-escenario" href="/index.html">
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+              Volver al Escenario (Buscador)
+            </a>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-code text-label-code uppercase tracking-wider text-outline px-space-sm py-space-xs">Sección Principal</span>
+          <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold">
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="inicio-dashboard" href="/loja/dashboard.html">
+              <span class="material-symbols-outlined text-[18px]">grid_view</span>
+              Inicio (Dashboard)
+            </a>
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="buscador-inteligente-trie" href="#">
+              <span class="material-symbols-outlined text-[18px]">manage_search</span>
+              Buscador Inteligente (Trie)
+            </a>
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="rutas-turisticas-grafos" href="#">
+              <span class="material-symbols-outlined text-[18px]">route</span>
+              Rutas Turísticas (Grafos)
+            </a>
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="cache-sieve-algoritmos" href="#">
+              <span class="material-symbols-outlined text-[18px]">memory</span>
+              Caché SIEVE (Algoritmos)
+            </a>
+          </nav>
+        </div>
+
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-code text-label-code uppercase tracking-wider text-outline px-space-sm py-space-xs">Exploración</span>
+          <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold">
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-[0_0_12px_rgba(231,176,74,0.25)] border border-primary/30 transition-all font-body-sm text-body-sm" data-path="explorar-destinos" href="/loja/destinos.html">
+              <span class="material-symbols-outlined text-[18px]">explore</span>
+              Explorar Destinos
+            </a>
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="lugares-populares-heap" href="#">
+              <span class="material-symbols-outlined text-[18px]">leaderboard</span>
+              Lugares Populares (Heap)
+            </a>
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="historial-y-favoritos" href="#">
+              <span class="material-symbols-outlined text-[18px]">bookmarks</span>
+              Historial y Favoritos
+            </a>
+          </nav>
+        </div>
+
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-code text-label-code uppercase tracking-wider text-outline px-space-sm py-space-xs">Académico / I+D</span>
+          <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold">
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="visualizador-estructuras" href="#">
+              <span class="material-symbols-outlined text-[18px]">account_tree</span>
+              Visualizador Estructuras
+            </a>
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="laboratorio-de-algoritmos" href="#">
+              <span class="material-symbols-outlined text-[18px]">science</span>
+              Laboratorio de Algoritmos
+            </a>
+          </nav>
+        </div>
+
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-code text-label-code uppercase tracking-wider text-outline px-space-sm py-space-xs">Sistema</span>
+          <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold">
+            <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="configuracion" href="#">
+              <span class="material-symbols-outlined text-[18px]">tune</span>
+              Configuración
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-space-sm bg-surface-container-lowest">
+      <div class="flex items-center justify-between px-space-sm py-2 rounded-lg bg-surface-container">
+        <div class="flex items-center gap-space-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+          </span>
+          <span class="font-code-body text-code-body text-on-surface">Nodo Loja-01</span>
+        </div>
+        <span class="font-label-code text-label-code text-tertiary">2.1ms</span>
+      </div>
+    </div>
+  </aside>
+
+  <div class="pl-72 flex flex-col min-h-screen">
+    <header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between">
+      <div class="flex items-center gap-space-md">
+        <div class="flex items-center gap-space-xs text-on-surface-variant font-code-body text-code-body">
+          <span class="text-outline">loja</span>
+          <span class="text-outline">/</span>
+          <span class="text-primary">nucleo</span>
+        </div>
+        <div class="relative flex items-center w-72">
+          <span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span>
+          <input class="w-full pl-9 pr-14 py-1.5 rounded-lg bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Búsqueda global (nodos, rutas)..." type="text"/>
+          <span class="absolute right-2 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-label-code">Ctrl+K</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-space-lg">
+        <a class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/50 text-primary whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-all font-body-sm text-body-sm font-semibold" href="/index.html" title="Volver al escenario FIAVL (buscador)">
+          <span class="material-symbols-outlined text-[16px]">theater_comedy</span>
+          <span class="hidden xl:inline">Escenario FIAVL</span>
+        </a>
+        <div class="flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-container-low font-code-body text-code-body whitespace-nowrap">
+          <span class="text-outline">Caché:</span>
+          <span class="text-on-surface font-semibold">256</span>
+          <span class="text-outline-variant">•</span>
+          <span class="text-outline">SIEVE:</span>
+          <span class="text-tertiary font-semibold" id="hdr-sieve-rate">— HIT</span>
+        </div>
+        <button class="relative p-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+          <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary"></span>
+        </button>
+        <div class="flex items-center gap-space-sm pl-space-xs">
+          <div class="flex flex-col text-right">
+            <span class="font-body-sm text-body-sm font-semibold text-on-surface leading-none">Grupo 4</span>
+            <span class="font-label-code text-label-code text-secondary leading-none mt-1">Estructura de Datos</span>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-full pt-16 bg-surface flex-1 px-space-lg py-space-lg">
+      <div class="flex flex-col w-full relative min-h-full">
+        <!-- Satellite Map Geographic Canvas Background -->
+        <div class="fixed inset-0 left-72 pointer-events-none z-0 overflow-hidden">
+          <div class="w-full h-full bg-cover bg-center filter saturate-75 brightness-75 scale-105 transition-transform duration-1000" data-alt="Realistic aerial satellite map imagery of Loja province Ecuador showing the Andean mountain topography, Vilcabamba valley, Podocarpus mountain range, inter-Andean ravines and terrain contours with deep obsidian navy tinting and subtle geographical relief." data-location="Loja, Ecuador, Andes Mountains topography aerial satellite view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCml8Uc-PBDzhhxOV-LhinHh3__NKO_V6Kthav4G9jbm2dhGXXN_6s9RstNlrcDUDI-tfMcVzG-oBjt5_6RnP-hmDve_0iRHFQz3TQKdNikTMhUBcPV66-Z4pBWOt5Uscl8W4G5P9QvrGGU8BUnDWt6gx8uLg1PqB6FjThrKUHqsCcqGegIkae0EZ5-4wE8ldczkqwN2f76l41UHildm3pB9NVSzjmp-ynNi-aZnQ')"></div>
+          <div class="absolute inset-0 bg-[#0B0907]/85 backdrop-blur-[2px]"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-surface via-transparent to-surface/90"></div>
+          <div class="absolute -top-32 right-1/4 w-[700px] h-[700px] bg-secondary/5 rounded-full blur-[140px] pointer-events-none"></div>
+          <div class="absolute -bottom-24 left-1/3 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+        </div>
+
+        <!-- Content Workspace Zone -->
+        <div class="relative z-10 flex flex-col gap-space-lg w-full max-w-[1680px] mx-auto pb-space-xl">
+          <!-- Hero Header & Filter Bar -->
+          <div class="flex flex-col gap-space-md pt-2">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+              <div>
+                <div class="flex items-center gap-space-xs font-label-code text-label-code text-primary uppercase tracking-widest mb-1.5">
+                  <span class="inline-block w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_#F6D28B]"></span>
+                  <span>Cartografía Turística / Nódulo Provincial</span>
+                  <span class="text-outline-variant">•</span>
+                  <span class="text-tertiary">GPS -3.9931, -79.2045</span>
+                </div>
+                <h1 class="font-display-hero text-headline-lg lg:text-[2.75rem] font-extrabold text-on-surface tracking-tight leading-none">
+                  Descubre <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary-fixed">Loja</span>
+                </h1>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl leading-relaxed">
+                  Explora los destinos turísticos, culturales y patrimoniales de nuestra ciudad andina analizados mediante estructuras computacionales.
+                </p>
+              </div>
+
+              <!-- Telemetry Stats Pill & Instant Search Input -->
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+                <div class="relative min-w-[320px] flex items-center">
+                  <span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">search</span>
+                  <input class="w-full pl-11 pr-16 py-2.5 rounded-xl bg-surface-container/90 backdrop-blur-md text-on-surface placeholder:text-outline font-body-sm text-body-sm shadow-md focus:outline-none focus:bg-surface-container-high focus:shadow-[0_0_20px_-2px_rgba(231,176,74,0.25)] transition-all" id="search-destinations" placeholder="Buscar por nombre, barrio, coordenadas..." type="text"/>
+                  <span class="absolute right-3 px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-label-code select-none">⌘K</span>
+                </div>
+                <div class="hidden xl:flex items-center gap-space-sm px-space-md py-2.5 rounded-xl bg-surface-container-low/90 backdrop-blur-md font-code-body text-code-body shadow-sm">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">satellite_alt</span>
+                  <span class="text-outline">Capa:</span>
+                  <span class="text-on-surface font-semibold">Ortofoto HD</span>
+                  <span class="text-outline-variant">|</span>
+                  <span class="text-tertiary font-semibold">6 Nodos Indexados</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pill Filter Bar -->
+            <div class="flex items-center gap-2 overflow-x-auto py-1 scrollbar-none">
+              <button class="filter-btn active-pill px-4 py-2 rounded-full font-body-sm text-body-sm font-semibold flex items-center gap-2 transition-all bg-primary-container text-on-primary-container shadow-[0_0_15px_-3px_rgba(231,176,74,0.35)]" data-filter="all" type="button">
+                <span>Todos</span>
+                <span class="px-1.5 py-0.5 rounded-full bg-surface-container-lowest/40 font-label-code text-[0.625rem] text-on-primary-container">6</span>
+              </button>
+              <button class="filter-btn px-4 py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface bg-surface-container/70 hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="favorites" type="button">
+                <span class="material-symbols-outlined text-[16px] text-error">favorite</span>
+                <span>Favoritos</span>
+                <span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest font-label-code text-[0.625rem] text-primary" id="fav-count-pill">0</span>
+              </button>
+              <button class="filter-btn px-4 py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface bg-surface-container/70 hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="Parque" type="button">
+                <span class="material-symbols-outlined text-[16px] text-tertiary">park</span>
+                <span>Parques</span>
+              </button>
+              <button class="filter-btn px-4 py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface bg-surface-container/70 hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="Sitio Histórico" type="button">
+                <span class="material-symbols-outlined text-[16px] text-primary">account_balance</span>
+                <span>Sitios Históricos</span>
+              </button>
+              <button class="filter-btn px-4 py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface bg-surface-container/70 hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="Naturaleza" type="button">
+                <span class="material-symbols-outlined text-[16px] text-secondary">eco</span>
+                <span>Naturaleza</span>
+              </button>
+              <button class="filter-btn px-4 py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface bg-surface-container/70 hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="Cultura" type="button">
+                <span class="material-symbols-outlined text-[16px] text-tertiary-fixed">theater_comedy</span>
+                <span>Cultura</span>
+              </button>
+              <button class="filter-btn px-4 py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface bg-surface-container/70 hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="Patrimonio Religioso" type="button">
+                <span class="material-symbols-outlined text-[16px] text-primary-fixed">church</span>
+                <span>Lugares Emblemáticos</span>
+              </button>
+              <button class="filter-btn px-4 py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface bg-surface-container/70 hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="Restaurantes" type="button">
+                <span class="material-symbols-outlined text-[16px] text-secondary-fixed">restaurant</span>
+                <span>Restaurantes</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tourism Destinations Bento Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg w-full" id="destinations-grid">
+            <!-- Card 1: Parque Recreacional Jipiro -->
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Parque" data-id="1">
+              <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
+                <img onerror="this.style.display='none'" alt="Parque Recreacional Jipiro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Parque Recreacional Jipiro in Loja Ecuador showcasing miniature world architectural replicas such as St Basil Cathedral and Pagoda across tranquil recreational lake with paddle boats under clear Andean blue skies surrounded by green willow trees." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC9j1QXScAP209OAV4KaALZnOuE4KWdCZX036lT7J6ASiisfckPERISj9DWEDrR_ZBjbi9pFAhA4_ZdoJ6Xu27CdYPm_Btfq8_t3qpHbBftBjbsdZ_g1HzCOD5zVUBoUrtFDs91Hvjb753y4wkqmTJ4kDXYIqv28thWHDzd0Pk06AhpO4H2ow6yAJGMPafoVCc8M4S7874LsWbyfC46aui_syB-nqX24y_FPyrCg"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
+                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-tertiary font-label-code text-label-code tracking-wider uppercase shadow-md">
+                  <span class="material-symbols-outlined text-[15px]">park</span>
+                  <span>Parque Temático</span>
+                </div>
+                <button aria-label="Añadir a favoritos" class="favorite-toggle absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:text-error hover:scale-110 active:scale-95 transition-all shadow-md group/fav" onclick="toggleFavorite(this, '1')" type="button">
+                  <span class="material-symbols-outlined text-[20px] transition-colors">favorite</span>
+                </button>
+                <div class="absolute bottom-3 left-3.5 flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-surface-container-high/90 text-on-surface font-code-body text-code-body">
+                  <span class="material-symbols-outlined text-[14px] text-tertiary">schedule</span>
+                  <span class="text-xs">06:00 - 18:30</span>
+                </div>
+              </div>
+
+              <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-1.5 text-secondary font-label-code text-label-code">
+                    <span class="material-symbols-outlined text-[14px]">location_on</span>
+                    <span class="truncate">Av. Salvador Bustamante Celi (Sector Norte)</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+                    Parque Recreacional Jipiro
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                    Famoso parque temático multicultural con réplicas a escala de maravillas mundiales: mezquita árabe, catedral de San Basilio, torre Eiffel y laguna con cisnes.
+                  </p>
+                </div>
+
+                <div class="pt-3 flex items-center justify-between bg-surface-container-low">
+                  <button class="flex items-center gap-1.5 text-primary hover:text-secondary font-body-sm text-body-sm font-semibold transition-colors group/link" onclick="openMapModal('Parque Recreacional Jipiro', 'Av. Salvador Bustamante Celi', -3.9715, -79.2008, 'Parque Temático', 'Jipiro es un espacio verde icónico de más de 10 hectáreas dedicado a la integración global de las culturas a través de la arquitectura y la recreación.')" type="button">
+                    <span class="material-symbols-outlined text-[18px] group-hover/link:animate-bounce">pin_drop</span>
+                    <span>Ver en Mapa</span>
+                  </button>
+                  <div class="flex items-center gap-2">
+                    <button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors flex items-center gap-1" onclick="openDetailModal('Parque Recreacional Jipiro', 'Parque Temático', 'Av. Salvador Bustamante Celi, Loja', 'Cuenta con más de 10 hectáreas de áreas recreacionales, campamentos, canchas deportivas, pista de patinaje, laguna navegable y monumentos que representan las nueve civilizaciones principales del mundo.', '06:00 - 18:30 (Todos los días)', 'Acceso Gratuito', '2,080 msnm')" type="button">
+                      <span>Detalles</span>
+                      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </button>
+                    <button aria-label="Reproducir o enfocar en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Parque Recreacional Jipiro', 'Av. Salvador Bustamante Celi', -3.9715, -79.2008, 'Parque Temático')" type="button">
+                      <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Puerta de la Ciudad -->
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Sitio Histórico" data-id="2">
+              <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
+                <img onerror="this.style.display='none'" alt="Puerta de la Ciudad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Puerta de la Ciudad in Loja Ecuador at dusk with medieval colonial stone castle illumination, historic drawbridge, illuminated clock tower over the entrance avenue, reflecting warm lanterns against deep midnight blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApGX-ddDKX-pEMsQR4d2GivdDmyBXnsSBG0ZIyFTvjImWdJMwSNuVFEUXWMGN2iZguJ4Lzq9QWuepYtl-C98ijSzTaaU5pk9NZ6tUirmqnkw6Ttywjo7LhITNNzJAkKSBbcxjrFwviEdefrLxJuRZZyPx5OqPmaLlK93HJIrd6pQmhfLi3rePtmQVI5OO6BhGccrYmXgy_z_U7cQtE8aFFOjsZN0nV1g0TpugsjQ"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
+                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-code text-label-code tracking-wider uppercase shadow-md">
+                  <span class="material-symbols-outlined text-[15px]">account_balance</span>
+                  <span>Sitio Histórico</span>
+                </div>
+                <button aria-label="Añadir a favoritos" class="favorite-toggle absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:text-error hover:scale-110 active:scale-95 transition-all shadow-md group/fav" onclick="toggleFavorite(this, '2')" type="button">
+                  <span class="material-symbols-outlined text-[20px] transition-colors">favorite</span>
+                </button>
+                <div class="absolute bottom-3 left-3.5 flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-surface-container-high/90 text-on-surface font-code-body text-code-body">
+                  <span class="material-symbols-outlined text-[14px] text-tertiary">museum</span>
+                  <span class="text-xs">Galerías y Museo</span>
+                </div>
+              </div>
+
+              <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-1.5 text-secondary font-label-code text-label-code">
+                    <span class="material-symbols-outlined text-[14px]">location_on</span>
+                    <span class="truncate">Av. Gran Colombia y 18 de Noviembre</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+                    Puerta de la Ciudad
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                    Monumento emblemático y museo de arte contemporáneo con puente levadizo inspirado en el escudo heráldico concedido por el Rey Felipe II en 1571.
+                  </p>
+                </div>
+
+                <div class="pt-3 flex items-center justify-between bg-surface-container-low">
+                  <button class="flex items-center gap-1.5 text-primary hover:text-secondary font-body-sm text-body-sm font-semibold transition-colors group/link" onclick="openMapModal('Puerta de la Ciudad', 'Av. Gran Colombia y 18 de Noviembre', -3.9878, -79.2043, 'Sitio Histórico', 'Emblema arquitectónico de Loja, erigido sobre el río Malacatos como punto de partida a las expediciones hacia la Amazonía.')" type="button">
+                    <span class="material-symbols-outlined text-[18px] group-hover/link:animate-bounce">pin_drop</span>
+                    <span>Ver en Mapa</span>
+                  </button>
+                  <div class="flex items-center gap-2">
+                    <button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors flex items-center gap-1" onclick="openDetailModal('Puerta de la Ciudad', 'Sitio Histórico & Museo', 'Av. Gran Colombia y 18 de Noviembre', 'Alberga cuatro galerías con exposiciones temporales de artistas plásticos lojanos y nacionales, cafetería tradicional con café lojano, mirador en la torre principal y tiendas de artesanías de Saraguro.', '08:00 - 20:00 (Martes a Domingo)', 'Acceso Gratuito', '2,060 msnm')" type="button">
+                      <span>Detalles</span>
+                      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </button>
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Puerta de la Ciudad', 'Av. Gran Colombia y 18 de Noviembre', -3.9878, -79.2043, 'Sitio Histórico')" type="button">
+                      <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Parque Eólico Villonaco -->
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Naturaleza" data-id="3">
+              <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
+                <img onerror="this.style.display='none'" alt="Parque Eólico Villonaco" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Villonaco Wind Farm in Loja Ecuador featuring monumental white wind turbines standing majestically along high Andean mountain ridge at sunset with golden orange light sweeping over Catamayo and Loja valleys." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOPfpgOI_nQslLGF9fa8DZQv-1SdCx8g7Fk36GCCh2H7eozgpD6WsTKDcFuaFHaVSO-sbmS5WTvuks8Dav-mbkGQpPMhbb6PM5jmFEsyrDqV1Z2Qam4uw1pd6Ya_9QWnKSuPxBUmS0NiIrcqFPPVn7WMWdlxtIg9dVaeE5fsUHzm5RPpLMg0t_cdAYr9DzdZsR-wB0_7IOH9ucEqlVDkeoh_4cYl8RQGPtCxK-og"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
+                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-secondary font-label-code text-label-code tracking-wider uppercase shadow-md">
+                  <span class="material-symbols-outlined text-[15px]">wind_power</span>
+                  <span>Naturaleza & Tech</span>
+                </div>
+                <button aria-label="Añadir a favoritos" class="favorite-toggle absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:text-error hover:scale-110 active:scale-95 transition-all shadow-md group/fav" onclick="toggleFavorite(this, '3')" type="button">
+                  <span class="material-symbols-outlined text-[20px] transition-colors">favorite</span>
+                </button>
+                <div class="absolute bottom-3 left-3.5 flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-surface-container-high/90 text-on-surface font-code-body text-code-body">
+                  <span class="material-symbols-outlined text-[14px] text-secondary">altitude</span>
+                  <span class="text-xs">2,720 msnm</span>
+                </div>
+              </div>
+
+              <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-1.5 text-secondary font-label-code text-label-code">
+                    <span class="material-symbols-outlined text-[14px]">location_on</span>
+                    <span class="truncate">Cerro Villonaco, Vía Antigua a Catamayo</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+                    Parque Eólico Villonaco
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                    Parque eólico pionero con mirador 360° a los valles de Loja y Catamayo, centro de interpretación pedagógico de energías renovables y senderos de viento.
+                  </p>
+                </div>
+
+                <div class="pt-3 flex items-center justify-between bg-surface-container-low">
+                  <button class="flex items-center gap-1.5 text-primary hover:text-secondary font-body-sm text-body-sm font-semibold transition-colors group/link" onclick="openMapModal('Parque Eólico Villonaco', 'Cerro Villonaco', -3.9961, -79.2619, 'Naturaleza & Tech', 'Ubicado en la cresta del cerro Villonaco, genera 16.5 MW para la red nacional ecuatoriana en un escenario geográfico de vientos andinos intensos.')" type="button">
+                    <span class="material-symbols-outlined text-[18px] group-hover/link:animate-bounce">pin_drop</span>
+                    <span>Ver en Mapa</span>
+                  </button>
+                  <div class="flex items-center gap-2">
+                    <button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors flex items-center gap-1" onclick="openDetailModal('Parque Eólico Villonaco', 'Naturaleza & Tecnología Renovable', 'Cima Cerro Villonaco km 14 vía Loja-Catamayo', 'Consta de 11 aerogeneradores de 1.5 MW. Cuenta con un moderno Centro de Visitantes con pantallas interactivas, cafetería con vistas panorámicas y cafetería andina.', '08:30 - 17:00 (Lunes a Domingo)', 'Ingreso Gratuito con Registro', '2,720 msnm')" type="button">
+                      <span>Detalles</span>
+                      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </button>
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Parque Eólico Villonaco', 'Cerro Villonaco', -3.9961, -79.2619, 'Naturaleza & Tech')" type="button">
+                      <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Catedral de Loja y Parque Central -->
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Patrimonio Religioso" data-id="4">
+              <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
+                <img onerror="this.style.display='none'" alt="Catedral de Loja y Parque Central" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Catedral de Loja and Central Independence Square in Ecuador with brightly illuminated colonial facade, grand bell towers, palm trees, historic central bronze fountain, and pedestrians walking during blue hour." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv-txpL8aiDMMOhoEhGww41v7outOgAW1kowc8o7qzsSgugXLT69FwWs3dIFm5PtohUR75hJEuMjeDG4ln93Ln_CVn4w77vAIrKffLFZE9uIwPtwysuqvkqB5RVh84YDxlqlPjSsm6kKPlVZ2gAmO4WC8UgIZINvs6Y5KsoOFqFagyh05EolVuBJx5k9GlrwzuzgRhTQvuZKAbgoqQVskzd2FaeWsMFromb45JYw"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
+                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary-fixed font-label-code text-label-code tracking-wider uppercase shadow-md">
+                  <span class="material-symbols-outlined text-[15px]">church</span>
+                  <span>Patrimonio Religioso</span>
+                </div>
+                <button aria-label="Añadir a favoritos" class="favorite-toggle absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:text-error hover:scale-110 active:scale-95 transition-all shadow-md group/fav" onclick="toggleFavorite(this, '4')" type="button">
+                  <span class="material-symbols-outlined text-[20px] transition-colors">favorite</span>
+                </button>
+                <div class="absolute bottom-3 left-3.5 flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-surface-container-high/90 text-on-surface font-code-body text-code-body">
+                  <span class="material-symbols-outlined text-[14px] text-tertiary">star</span>
+                  <span class="text-xs">Sede Virgen del Cisne</span>
+                </div>
+              </div>
+
+              <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-1.5 text-secondary font-label-code text-label-code">
+                    <span class="material-symbols-outlined text-[14px]">location_on</span>
+                    <span class="truncate">Parque Central / Bernardo Valdivieso & 10 de Agosto</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+                    Catedral y Parque Central
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                    Templo matriz de estilo neoclásico frente a la Plaza de la Independencia, refugio mariano de la venerada imagen de la Virgen de El Cisne entre agosto y noviembre.
+                  </p>
+                </div>
+
+                <div class="pt-3 flex items-center justify-between bg-surface-container-low">
+                  <button class="flex items-center gap-1.5 text-primary hover:text-secondary font-body-sm text-body-sm font-semibold transition-colors group/link" onclick="openMapModal('Catedral de Loja', 'Parque Central', -3.9984, -79.2045, 'Patrimonio Religioso', 'Epicentro histórico y cívico de Loja. Construcción de adobe y piedra iniciada en el siglo XVI con imponentes campanas traídas desde Europa.')" type="button">
+                    <span class="material-symbols-outlined text-[18px] group-hover/link:animate-bounce">pin_drop</span>
+                    <span>Ver en Mapa</span>
+                  </button>
+                  <div class="flex items-center gap-2">
+                    <button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors flex items-center gap-1" onclick="openDetailModal('Catedral de Loja y Parque Central', 'Patrimonio Religioso & Plaza Mayor', 'Calles José Antonio Eguiguren y Bernardo Valdivieso', 'Es una de las catedrales más grandes de Ecuador. En su interior se aprecian finos retablos de madera tallada en pan de oro, pinturas de la escuela quiteña y un órgano tubular de factura alemana.', '06:30 - 19:30 (Misas diarias)', 'Entrada Libre', '2,060 msnm')" type="button">
+                      <span>Detalles</span>
+                      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </button>
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Catedral de Loja', 'Parque Central', -3.9984, -79.2045, 'Patrimonio Religioso')" type="button">
+                      <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5: Parque Nacional Podocarpus - Cajanuma -->
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Naturaleza" data-id="5">
+              <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
+                <img onerror="this.style.display='none'" alt="Parque Nacional Podocarpus - Cajanuma" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Podocarpus National Park Cajanuma entrance in Loja Ecuador showcasing ancient cloud forest with bromeliads, mossy romerillo podocarpus trees, mist swirling through lush Andean subtropical vegetation and high mountain hiking trail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeUuw0cPyKjdJ308J-3exLWpv0Mlmsy4660Gq73yPHWKqYI2f47ndZNvhB9ypKPF9awHAggeq05tS11YeyRvnuTDVqTkElQPKNz73_UEM7HPQMlWGJnpWWmTbNWJG6WlP6g_EFkI-2rFt590pn_L1T4Gxly7sN6oVUwOd3TFmqCapDY6qzw1w9wG4S9wUhBcsoBlzwhKFqPk6c1mhVwTmJ_z8dlJPCv0KNvPJUkQ"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
+                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-tertiary-fixed-dim font-label-code text-label-code tracking-wider uppercase shadow-md">
+                  <span class="material-symbols-outlined text-[15px]">forest</span>
+                  <span>Reserva de Biosfera</span>
+                </div>
+                <button aria-label="Añadir a favoritos" class="favorite-toggle absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:text-error hover:scale-110 active:scale-95 transition-all shadow-md group/fav" onclick="toggleFavorite(this, '5')" type="button">
+                  <span class="material-symbols-outlined text-[20px] transition-colors">favorite</span>
+                </button>
+                <div class="absolute bottom-3 left-3.5 flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-surface-container-high/90 text-on-surface font-code-body text-code-body">
+                  <span class="material-symbols-outlined text-[14px] text-tertiary">terrain</span>
+                  <span class="text-xs">Lagunas del Compadre</span>
+                </div>
+              </div>
+
+              <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-1.5 text-secondary font-label-code text-label-code">
+                    <span class="material-symbols-outlined text-[14px]">location_on</span>
+                    <span class="truncate">Acceso Cajanuma, 8 km al sur de Loja</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+                    PN Podocarpus - Cajanuma
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                    Jardín botánico de América: reserva de biosfera con inigualable biodiversidad de aves, orquídeas endémicas, árboles de romerillo y lagunas glaciares.
+                  </p>
+                </div>
+
+                <div class="pt-3 flex items-center justify-between bg-surface-container-low">
+                  <button class="flex items-center gap-1.5 text-primary hover:text-secondary font-body-sm text-body-sm font-semibold transition-colors group/link" onclick="openMapModal('Parque Nacional Podocarpus - Cajanuma', 'Sector Cajanuma', -4.1166, -79.1666, 'Reserva de Biosfera', 'Refugio natural de más de 4,000 especies de plantas vasculares y el único oso de anteojos andino.')" type="button">
+                    <span class="material-symbols-outlined text-[18px] group-hover/link:animate-bounce">pin_drop</span>
+                    <span>Ver en Mapa</span>
+                  </button>
+                  <div class="flex items-center gap-2">
+                    <button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors flex items-center gap-1" onclick="openDetailModal('Parque Nacional Podocarpus - Cajanuma', 'Reserva de Biosfera & Trekking', 'Troncal de la Sierra Sur, km 8 sector Cajanuma', 'Senderos autoguiados como Los Romerillos (800m), Bosque Nublado (3km) y Mirador del Cajanuma (5km). Punto de partida para la expedición a las 102 lagunas del Compadre en páramo andino.', '08:00 - 15:30 (Registro obligatorio MAATE)', 'Ingreso Gratuito (Guiado recomendado)', '2,900 - 3,600 msnm')" type="button">
+                      <span>Detalles</span>
+                      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </button>
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Parque Nacional Podocarpus - Cajanuma', 'Sector Cajanuma', -4.1166, -79.1666, 'Reserva de Biosfera')" type="button">
+                      <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6: Calle Lourdes y San Sebastián -->
+            <article class="destination-card group flex flex-col rounded-2xl bg-surface-container-low/95 backdrop-blur-xl shadow-xl hover:shadow-[0_0_24px_-4px_rgba(231,176,74,0.25)] hover:-translate-y-1 transition-all duration-300 overflow-hidden" data-category="Cultura" data-id="6">
+              <div class="relative w-full h-56 overflow-hidden bg-surface-container-highest">
+                <img onerror="this.style.display='none'" alt="Calle Lourdes y Barrio San Sebastián" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Calle Lourdes in traditional San Sebastian neighborhood Loja Ecuador showcasing authentic narrow cobblestone lane with brightly painted blue and white colonial houses wooden balconies blooming bougainvillea flowers and cozy specialty coffee shops." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSp8i5Hm6XmNdQRZDjkYv-Qdh67sv06kTtUTN81XvnrAxBmc0HHXBsDbUFMUkQKytPWFQ4uRT2OmUtQExMmX6cqE16_xbrTizJDq7WX0QJ4it3dHdIn-KHu7ysIrgG2CiTGzZIUwh-7Tf_LIFNOyAoi84STA-UswiiRrofzPgzQPp7PAlKkgQxi6do6nwAOoGPJ_6TRAZCfTXW6TWfyOsqNELrEWDOkv9cjBwdqg"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
+                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-secondary-fixed font-label-code text-label-code tracking-wider uppercase shadow-md">
+                  <span class="material-symbols-outlined text-[15px]">palette</span>
+                  <span>Cultura Viva</span>
+                </div>
+                <button aria-label="Añadir a favoritos" class="favorite-toggle absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:text-error hover:scale-110 active:scale-95 transition-all shadow-md group/fav" onclick="toggleFavorite(this, '6')" type="button">
+                  <span class="material-symbols-outlined text-[20px] transition-colors">favorite</span>
+                </button>
+                <div class="absolute bottom-3 left-3.5 flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-surface-container-high/90 text-on-surface font-code-body text-code-body">
+                  <span class="material-symbols-outlined text-[14px] text-tertiary">coffee</span>
+                  <span class="text-xs">Ruta del Café</span>
+                </div>
+              </div>
+
+              <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-1.5 text-secondary font-label-code text-label-code">
+                    <span class="material-symbols-outlined text-[14px]">location_on</span>
+                    <span class="truncate">Calle Lourdes (entre Bolívar y Sucre)</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+                    Calle Lourdes & San Sebastián
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                    Emblemática calle tradicional de adoquines, balcones floridos de madera, talleres de café de especialidad de altura y artesanías autóctonas lojanas.
+                  </p>
+                </div>
+
+                <div class="pt-3 flex items-center justify-between bg-surface-container-low">
+                  <button class="flex items-center gap-1.5 text-primary hover:text-secondary font-body-sm text-body-sm font-semibold transition-colors group/link" onclick="openMapModal('Calle Lourdes y San Sebastián', 'Calle Lourdes', -4.0044, -79.2062, 'Cultura', 'La calle colonial mejor conservada de la ciudad, epicentro de la bohemia, música en vivo y gastronomía lojana típica.')" type="button">
+                    <span class="material-symbols-outlined text-[18px] group-hover/link:animate-bounce">pin_drop</span>
+                    <span>Ver en Mapa</span>
+                  </button>
+                  <div class="flex items-center gap-2">
+                    <button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors flex items-center gap-1" onclick="openDetailModal('Calle Lourdes y San Sebastián', 'Cultura, Gastronomía & Tradición', 'Calle Lourdes entre Bolívar y Sucre', 'Paseo peatonal adoquinado flanqueado por casonas coloniales de tapia y teja. Ofrece degustación de tamales lojanos, humitas, horchata tradicional y los mejores cafés galardonados de Puyango y Chaguarpamba.', 'Todo el día (Comercios: 10:00 - 22:00)', 'Peatonal Libre', '2,065 msnm')" type="button">
+                      <span>Detalles</span>
+                      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </button>
+                    <button aria-label="Ver en mapa" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 shadow-[0_0_12px_rgba(231,176,74,0.4)] transition-all" onclick="openMapModal('Calle Lourdes y San Sebastián', 'Calle Lourdes', -4.0044, -79.2062, 'Cultura')" type="button">
+                      <span class="material-symbols-outlined text-[20px] fill-current">play_arrow</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Empty Search State Notification -->
+          <div class="hidden flex-col items-center justify-center py-20 px-space-lg text-center rounded-2xl bg-surface-container-low/80 backdrop-blur-md" id="no-results-state">
+            <span class="material-symbols-outlined text-outline text-6xl mb-3">travel_explore</span>
+            <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">No se encontraron destinos</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-1">
+              Prueba con otro término de búsqueda como 'Villonaco', 'Jipiro' o selecciona otra categoría en el menú superior.
+            </p>
+            <button class="mt-4 px-5 py-2 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:bg-secondary transition-colors" onclick="resetFilters()" type="button">
+              Ver todos los destinos
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Map Modal -->
+        <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-container-lowest/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300" id="map-modal">
+          <div class="relative w-full max-w-4xl rounded-2xl bg-surface-container-low shadow-2xl overflow-hidden flex flex-col">
+            <div class="flex items-center justify-between px-space-lg py-3.5 bg-surface-container">
+              <div class="flex items-center gap-2.5">
+                <span class="w-3 h-3 rounded-full bg-primary animate-ping"></span>
+                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface" id="modal-map-title">Punto Georreferenciado</h3>
+              </div>
+              <button class="p-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeModal('map-modal')" type="button">
+                <span class="material-symbols-outlined text-[22px]">close</span>
+              </button>
+            </div>
+
+            <div class="relative w-full h-[420px] bg-surface-container-lowest overflow-hidden">
+              <div class="w-full h-full bg-cover bg-center filter contrast-110" data-alt="Detailed map view of Loja city streets, river Malacatos and Zamora courses, topography contours, central grid and parks in a high-tech modern digital map style." data-location="Loja, Ecuador city centre" id="modal-map-canvas" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCml8Uc-PBDzhhxOV-LhinHh3__NKO_V6Kthav4G9jbm2dhGXXN_6s9RstNlrcDUDI-tfMcVzG-oBjt5_6RnP-hmDve_0iRHFQz3TQKdNikTMhUBcPV66-Z4pBWOt5Uscl8W4G5P9QvrGGU8BUnDWt6gx8uLg1PqB6FjThrKUHqsCcqGegIkae0EZ5-4wE8ldczkqwN2f76l41UHildm3pB9NVSzjmp-ynNi-aZnQ')"></div>
+
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div class="flex flex-col items-center">
+                  <div class="px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-xl text-primary font-label-code text-label-code uppercase tracking-wider mb-2 flex items-center gap-1.5 animate-pulse">
+                    <span class="material-symbols-outlined text-[16px] text-tertiary">my_location</span>
+                    <span id="modal-map-coords">-3.9931, -79.2045</span>
+                  </div>
+                  <div class="relative flex items-center justify-center">
+                    <span class="w-12 h-12 rounded-full bg-primary/25 animate-ping absolute"></span>
+                    <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container shadow-[0_0_20px_#E7B04A] flex items-center justify-center">
+                      <span class="material-symbols-outlined text-[22px]">location_on</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-surface-container-low/95 backdrop-blur-md shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-3">
+                <div class="flex flex-col">
+                  <span class="font-label-code text-label-code text-secondary uppercase" id="modal-map-badge">Ubicación</span>
+                  <span class="font-body-md text-body-md font-semibold text-on-surface" id="modal-map-address">Dirección cargada</span>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl text-xs line-clamp-1 mt-0.5" id="modal-map-desc">Descripción de contexto geográfico.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-code text-label-code flex items-center gap-1.5 transition-colors" onclick="copyCoordinates()" type="button">
+                    <span class="material-symbols-outlined text-[16px]">content_copy</span>
+                    <span id="copy-btn-label">Copiar GPS</span>
+                  </button>
+                  <button class="px-4 py-1.5 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:bg-secondary transition-colors" onclick="closeModal('map-modal')" type="button">
+                    Aceptar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Destination Details Modal -->
+        <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-container-lowest/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300" id="detail-modal">
+          <div class="relative w-full max-w-2xl rounded-2xl bg-surface-container-low shadow-2xl overflow-hidden flex flex-col">
+            <div class="flex items-center justify-between px-space-lg py-4 bg-surface-container">
+              <div>
+                <span class="font-label-code text-label-code text-secondary uppercase tracking-wider" id="modal-detail-badge">Categoría</span>
+                <h2 class="font-headline-md text-headline-md font-bold text-on-surface leading-tight mt-0.5" id="modal-detail-title">Nombre del Destino</h2>
+              </div>
+              <button class="p-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeModal('detail-modal')" type="button">
+                <span class="material-symbols-outlined text-[22px]">close</span>
+              </button>
+            </div>
+
+            <div class="p-space-lg flex flex-col gap-space-md max-h-[70vh] overflow-y-auto">
+              <div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+                <span class="material-symbols-outlined text-primary text-[18px]">place</span>
+                <span id="modal-detail-address">Ubicación</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface leading-relaxed" id="modal-detail-description">
+                Descripción completa del lugar turístico.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div class="p-3 rounded-xl bg-surface-container flex flex-col gap-1">
+                  <span class="font-label-code text-label-code text-outline uppercase">Horario</span>
+                  <span class="font-body-sm text-body-sm font-semibold text-on-surface" id="modal-detail-hours">Cargando...</span>
+                </div>
+                <div class="p-3 rounded-xl bg-surface-container flex flex-col gap-1">
+                  <span class="font-label-code text-label-code text-outline uppercase">Costo</span>
+                  <span class="font-body-sm text-body-sm font-semibold text-tertiary" id="modal-detail-fee">Gratuito</span>
+                </div>
+                <div class="p-3 rounded-xl bg-surface-container flex flex-col gap-1">
+                  <span class="font-label-code text-label-code text-outline uppercase">Altitud</span>
+                  <span class="font-body-sm text-body-sm font-semibold text-primary" id="modal-detail-altitude">2,060 msnm</span>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest flex items-center justify-between font-code-body text-code-body">
+                <div class="flex items-center gap-2 text-outline">
+                  <span class="material-symbols-outlined text-[18px] text-tertiary">database</span>
+                  <span>Grafo Turístico Nodo:</span>
+                  <span class="text-on-surface font-semibold">LOJA_DEST_V2</span>
+                </div>
+                <span class="text-tertiary font-label-code text-label-code">Indexado O(1)</span>
+              </div>
+            </div>
+
+            <div class="px-space-lg py-3.5 bg-surface-container flex items-center justify-end gap-3">
+              <button class="px-4 py-2 rounded-lg bg-surface-container-highest text-on-surface font-body-sm text-body-sm font-semibold hover:bg-surface-bright transition-colors" onclick="closeModal('detail-modal')" type="button">
+                Cerrar
+              </button>
+              <button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-body-sm text-body-sm font-semibold shadow-md hover:bg-secondary transition-all flex items-center gap-1.5" onclick="triggerPlannerToast()" type="button">
+                <span class="material-symbols-outlined text-[18px]">add_location_alt</span>
+                <span>Añadir a mi Ruta</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-container-high text-on-surface shadow-2xl opacity-0 pointer-events-none translate-y-3 transition-all duration-300" id="app-toast">
+          <span class="material-symbols-outlined text-tertiary text-[20px]" id="toast-icon">check_circle</span>
+          <span class="font-body-sm text-body-sm font-medium" id="toast-msg">Acción completada</span>
+        </div>
+      </div>
+
+      <script>
+        const favoriteDestinations = new Set();
+        let activeCategory = 'all';
+        let activeSearchQuery = '';
+        let currentCoordinates = '-3.9931, -79.2045';
+
+        function toggleFavorite(btn, destId) {
+          const icon = btn.querySelector('.material-symbols-outlined');
+          if (favoriteDestinations.has(destId)) {
+            favoriteDestinations.delete(destId);
+            btn.classList.remove('text-error');
+            btn.classList.add('text-on-surface');
+            icon.style.fontVariationSettings = "'FILL' 0";
+            showToast('Destino eliminado de favoritos', 'favorite_border', 'text-outline');
+          } else {
+            favoriteDestinations.add(destId);
+            btn.classList.remove('text-on-surface');
+            btn.classList.add('text-error');
+            icon.style.fontVariationSettings = "'FILL' 1";
+            showToast('Destino guardado en favoritos', 'favorite', 'text-error');
+          }
+          updateFavoritesCounter();
+          renderFilteredCards();
+        }
+
+        function updateFavoritesCounter() {
+          const badge = document.getElementById('fav-count-pill');
+          if (badge) {
+            badge.textContent = favoriteDestinations.size;
+          }
+        }
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach((b) => {
+              b.classList.remove('active-pill', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_15px_-3px_rgba(231,176,74,0.35)]');
+              b.classList.add('text-on-surface-variant', 'bg-surface-container/70');
+            });
+            btn.classList.add('active-pill', 'bg-primary-container', 'text-on-primary-container', 'shadow-[0_0_15px_-3px_rgba(231,176,74,0.35)]');
+            btn.classList.remove('text-on-surface-variant', 'bg-surface-container/70');
+
+            activeCategory = btn.getAttribute('data-filter') || 'all';
+            renderFilteredCards();
+          });
+        });
+
+        function renderFilteredCards() {
+          const cards = document.querySelectorAll('.destination-card');
+          const noResults = document.getElementById('no-results-state');
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
+            const cardId = card.getAttribute('data-id') || '';
+            const cardText = card.textContent.toLowerCase();
+
+            let matchesCategory = false;
+            if (activeCategory === 'all') {
+              matchesCategory = true;
+            } else if (activeCategory === 'favorites') {
+              matchesCategory = favoriteDestinations.has(cardId);
+            } else {
+              const targetCat = activeCategory.toLowerCase();
+              matchesCategory = cardCat.includes(targetCat) || targetCat.includes(cardCat);
+            }
+
+            const matchesSearch = !activeSearchQuery || cardText.includes(activeSearchQuery);
+
+            if (matchesCategory && matchesSearch) {
+              card.classList.remove('hidden');
+              visibleCount++;
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+            noResults.classList.add('flex');
+          } else {
+            noResults.classList.add('hidden');
+            noResults.classList.remove('flex');
+          }
+        }
+
+        function resetFilters() {
+          activeSearchQuery = '';
+          const searchInput = document.getElementById('search-destinations');
+          if (searchInput) searchInput.value = '';
+          const allBtn = document.querySelector('[data-filter="all"]');
+          if (allBtn) {
+            allBtn.click();
+          } else {
+            activeCategory = 'all';
+            renderFilteredCards();
+          }
+        }
+
+        const searchInput = document.getElementById('search-destinations');
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            activeSearchQuery = e.target.value.toLowerCase().trim();
+            renderFilteredCards();
+          });
+        }
+
+        window.addEventListener('keydown', (e) => {
+          if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            if (searchInput) searchInput.focus();
+          }
+          if (e.key === 'Escape') {
+            closeModal('map-modal');
+            closeModal('detail-modal');
+          }
+        });
+
+        function openMapModal(title, address, lat, lng, badge, desc = '') {
+          currentCoordinates = `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
+          document.getElementById('modal-map-title').textContent = title;
+          document.getElementById('modal-map-coords').textContent = currentCoordinates;
+          document.getElementById('modal-map-address').textContent = address;
+          document.getElementById('modal-map-badge').textContent = badge;
+          document.getElementById('modal-map-desc').textContent = desc || `Visualización geográfica del nodo Loja-GPS: ${lat}, ${lng}`;
+
+          const modal = document.getElementById('map-modal');
+          modal.classList.remove('opacity-0', 'pointer-events-none');
+          modal.classList.add('opacity-100');
+        }
+
+        function openDetailModal(title, badge, address, description, hours, fee, altitude) {
+          document.getElementById('modal-detail-title').textContent = title;
+          document.getElementById('modal-detail-badge').textContent = badge;
+          document.getElementById('modal-detail-address').textContent = address;
+          document.getElementById('modal-detail-description').textContent = description;
+          document.getElementById('modal-detail-hours').textContent = hours;
+          document.getElementById('modal-detail-fee').textContent = fee;
+          document.getElementById('modal-detail-altitude').textContent = altitude;
+
+          const modal = document.getElementById('detail-modal');
+          modal.classList.remove('opacity-0', 'pointer-events-none');
+          modal.classList.add('opacity-100');
+        }
+
+        function closeModal(modalId) {
+          const modal = document.getElementById(modalId);
+          if (modal) {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+          }
+        }
+
+        function copyCoordinates() {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(currentCoordinates).then(() => {
+              const label = document.getElementById('copy-btn-label');
+              label.textContent = '¡Copiado!';
+              showToast(`Coordenadas ${currentCoordinates} copiadas`, 'pin_drop', 'text-secondary');
+              setTimeout(() => { label.textContent = 'Copiar GPS'; }, 2000);
+            });
+          } else {
+            showToast(`GPS activo: ${currentCoordinates}`, 'pin_drop', 'text-secondary');
+          }
+        }
+
+        function triggerPlannerToast() {
+          closeModal('detail-modal');
+          showToast('Destino agregado a la cola de recorrido', 'route', 'text-tertiary');
+        }
+
+        function showToast(msg, icon = 'check_circle', colorClass = 'text-tertiary') {
+          const toast = document.getElementById('app-toast');
+          const toastMsg = document.getElementById('toast-msg');
+          const toastIcon = document.getElementById('toast-icon');
+
+          toastMsg.textContent = msg;
+          toastIcon.textContent = icon;
+          toastIcon.className = `material-symbols-outlined text-[20px] ${colorClass}`;
+
+          toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+          toast.classList.add('opacity-100', 'translate-y-0');
+
+          setTimeout(() => {
+            toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+            toast.classList.remove('opacity-100', 'translate-y-0');
+          }, 2800);
+        }
+      </script>
+    </main>
+    <footer class="relative z-10 border-t-2 border-primary-container bg-gradient-to-b from-[#7A1219] to-[#4a0a10] px-space-md py-3 text-center">
+      <p class="font-label-code text-label-code uppercase tracking-[0.22em] text-secondary">UNIVERSIDAD NACIONAL DE LOJA · COMPUTACIÓN · ESTRUCTURA DE DATOS</p>
+      <p class="font-body-sm text-body-sm text-on-surface/70 mt-1">Festival Internacional de Artes Vivas de Loja · Grupo 4 · Septiembre 2026 – Febrero 2027</p>
+    </footer>
+  </div>
+
+  <script>
+    /* Telemetría ligera compartida: lee /api/comparativa y actualiza el indicador SIEVE del encabezado. */
+    (function () {
+      var headerRate = document.getElementById('hdr-sieve-rate');
+      function pct(st) { return Math.max(0, Math.min(100, parseFloat(st && st.hitRate) || 0)); }
+      function setText(id, v) { var el = document.getElementById(id); if (el) el.textContent = v; }
+      function paint(comp) {
+        if (!comp) return;
+        if (headerRate && comp.sieve) headerRate.textContent = pct(comp.sieve) + '% HIT';
+        ['sieve', 'lru', 'fifo'].forEach(function (k) {
+          var st = comp[k];
+          if (!st) return;
+          setText('tel-' + k + '-rate', pct(st));
+          setText('tel-' + k + '-hits', st.hits);
+          setText('tel-' + k + '-misses', st.misses);
+          setText('tel-' + k + '-size', st.size + ' / ' + st.capacity);
+          var bar = document.getElementById('tel-' + k + '-bar');
+          if (bar) bar.style.width = pct(st) + '%';
+        });
+        setText('tel-status', 'En vivo desde /api/comparativa · actualiza cada 5 s');
+      }
+      function load() {
+        fetch('/api/comparativa')
+          .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+          .then(paint)
+          .catch(function () {
+            if (headerRate) headerRate.textContent = 'sin datos';
+            setText('tel-status', 'Sin conexión con /api/comparativa: inicia el servidor (npm start) para ver métricas reales.');
+          });
+      }
+      load();
+      setInterval(load, 5000);
+    })();
+  </script>
+</body>
+</html>

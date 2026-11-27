@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#7a1219" />
+  <title>Autocompletado FIAVL — Loja (SIEVE vs LRU vs FIFO)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="stage">
+  <!-- Escenario: telones, cenefa con luces doradas, focos y tablado (decorativo) -->
+  <div class="fx-spot fx-spot--l" aria-hidden="true"></div>
+  <div class="fx-spot fx-spot--r" aria-hidden="true"></div>
+  <div class="fx-floor" aria-hidden="true"></div>
+  <div class="fx-curtain fx-curtain--left" aria-hidden="true"></div>
+  <div class="fx-curtain fx-curtain--right" aria-hidden="true"></div>
+  <div class="fx-valance" aria-hidden="true"></div>
+
+  <main class="container">
+    <header>
+      <p class="eyebrow">Festival Internacional de Artes Vivas · Loja, Ecuador</p>
+      <h1>Festival de <span class="gold">Artes Vivas</span> de Loja</h1>
+      <p class="lead">Buscador en tiempo real con Árbol de Prefijos (Trie) y Comparativa de Cachés (SIEVE, LRU, FIFO)</p>
+      <nav class="stage-nav" aria-label="Navegación módulos Loja">
+        <a href="/loja/dashboard.html">Dashboard Loja</a>
+        <a href="/loja/destinos.html">Explorar Destinos</a>
+      </nav>
+    </header>
+
+    <section class="search-box" aria-label="Buscador de lugares, obras y eventos">
+      <div class="controls">
+        <div class="searchbar">
+          <input id="searchInput" type="text" placeholder="Escribe un lugar, obra o evento (ej. Teatro, Feria, Parque)..." autocomplete="off" />
+          <span id="cacheBadge" data-state="idle" role="status" aria-live="polite">EN ESPERA · SIEVE</span>
+        </div>
+        <select id="policySelect" aria-label="Política de caché">
+          <option value="sieve" selected>SIEVE</option>
+          <option value="lru">LRU</option>
+          <option value="fifo">FIFO</option>
+        </select>
+      </div>
+      <div id="metrics" class="metrics">Estado: listo</div>
+      <p class="hint">
+        Cada pulsación consulta primero el <code>Map</code> de la caché en <code>O(1)</code>.
+        <strong>HIT</strong> responde al instante; <strong>MISS</strong> recorre el Trie en <code>O(L)</code>
+        (L = longitud del prefijo) y guarda el resultado con la política activa.
+      </p>
+      <div class="quick">
+        <span class="quick__label">Prueba</span>
+        <button type="button" class="chip" data-q="Teatro">Teatro</button>
+        <button type="button" class="chip" data-q="Feria">Feria</button>
+        <button type="button" class="chip" data-q="Parque">Parque</button>
+        <button type="button" class="chip" data-q="pu">pu</button>
+      </div>
+    </section>
+
+    <section class="comparison">
+      <h2>Comparativa de Políticas en Vivo</h2>
+      <p class="comparison__note">Capacidad de 256 entradas por política. Las tres cachés reciben las mismas consultas para contrastar aciertos, fallos y tasa de acierto.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Política</th>
+              <th>Tamaño</th>
+              <th>Hits</th>
+              <th>Misses</th>
+              <th>Hit Rate</th>
+            </tr>
+          </thead>
+          <tbody id="compareBody">
+            <tr><td>SIEVE</td><td>0 / 256</td><td>0</td><td>0</td><td>0%</td></tr>
+            <tr><td>LRU</td><td>0 / 256</td><td>0</td><td>0</td><td>0%</td></tr>
+            <tr><td>FIFO</td><td>0 / 256</td><td>0</td><td>0</td><td>0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <ul id="resultsList" class="results"></ul>
+
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">Tras bambalinas</h2>
+      <p class="comparison__note">Las tres piezas que sostienen el autocompletado del FIAVL, según la documentación técnica del proyecto.</p>
+
+      <div class="about__grid">
+        <article class="about__card">
+          <h3>🌳 Árbol de prefijos <span class="about__cost">O(L)</span></h3>
+          <p>Trie con el catálogo maestro de obras, sedes, artistas y eventos del festival. Agrupa los nombres por caracteres compartidos: al escribir <code>pu</code> recorre <code>p → u</code> (2 pasos) y reúne lo que cuelga de ese nodo.</p>
+        </article>
+        <article class="about__card">
+          <h3>🗝️ Map + lista doble <span class="about__cost">O(1)</span></h3>
+          <p>El <code>Map</code> asocia cada consulta con su nodo exacto en la caché. Los nodos de la lista doblemente enlazada tienen <code>prev</code>, <code>next</code> y un bit <code>visited</code>.</p>
+        </article>
+        <article class="about__card about__card--star">
+          <h3>♻️ SIEVE ⭐ <span class="about__cost">lazy promotion</span></h3>
+          <p>Inserta por la cabeza con <code>visited = false</code>. Un acierto solo marca <code>visited = true</code>, sin reordenar. Al llenarse, el puntero <code>hand</code> barre y expulsa el primer nodo no visitado.</p>
+        </article>
+      </div>
+
+      <article class="about__card about__wide">
+        <h3>⚖️ FIFO · LRU · SIEVE</h3>
+        <p><strong>FIFO</strong> expulsa al más antiguo sin mirar el uso. <strong>LRU</strong> reordena los nodos en cada acierto y elimina al que más tiempo lleva sin consultarse, con sobrecarga de reordenamiento elevada. <strong>SIEVE</strong> descarta elementos impopulares sin mover nada en los aciertos, lo que reduce la sobrecarga en Node.js.</p>
+        <ol class="flow" aria-label="Flujo de una consulta">
+          <li>Pulsación en el buscador</li>
+          <li>Consulta al <code>Map</code> · O(1)</li>
+          <li class="is-hit">HIT: responde al instante</li>
+          <li class="is-miss">MISS: Trie · O(L) → guarda en caché</li>
+          <li>Respuesta con métricas en ms</li>
+        </ol>
+      </article>
+
+      <article class="about__card about__wide">
+        <h3>🎭 FIAVL en Loja</h3>
+        <p>El Festival Internacional de Artes Vivas de Loja genera una alta concurrencia de consultas sobre obras, sedes, artistas y eventos culturales. Este sistema prioriza respuestas en milisegundos para residentes y turistas, y evita recorridos redundantes sobre el catálogo cuando las consultas se repiten.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="institutional">
+    <p class="institutional__main">UNIVERSIDAD NACIONAL DE LOJA · COMPUTACIÓN · ESTRUCTURA DE DATOS</p>
+    <p class="institutional__sub">Grupo 4 · Tercer ciclo · Docente: Ing. Cristian Narvaez · Septiembre 2026 – Febrero 2027</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
