@@ -282,7 +282,7 @@ La evicción basada en el bit de visita y el puntero `hand` minimiza la latencia
 
 | Buscador | Resultados |
 |:--:|:--:|
-| <img src="assets/capturas/buscador.png" alt="Buscador"/> | <img src="assets/capturas/resultados.png" alt="Resultados"/> |
+| <img src="assets/capturas/buscador.png" alt="Buscador"/> | <img src="assets/capturas/catalogo.png" alt="Resultados"/> |
 | <sub>Figura 5. Búsqueda por prefijo</sub> | <sub>Figura 6. Sugerencias del catálogo</sub> |
 | <img src="assets/capturas/cache.png" alt="Caché"/> | <img src="assets/capturas/rendimiento.png" alt="Gráfica comparativa"/> |
 | <sub>Figura 7. Estado de la caché</sub> | <sub>Figura 8. FIFO vs. LRU vs. SIEVE</sub> |
