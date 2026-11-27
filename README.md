@@ -282,19 +282,19 @@ La evicción basada en el bit de visita y el puntero `hand` minimiza la latencia
 
 | Buscador | Resultados |
 |:--:|:--:|
-| <img src="assets/capturas/buscador.png" alt="Buscador"/> | <img src="assets/capturas/catalogo.png" alt="Resultados"/> |
+| <img src="assets/capturas/buscador.png" alt="Buscador" width="320" height="180"/> | <img src="assets/capturas/catalogo.png" alt="Resultados" width="320" height="180"/> |
 | <sub>Figura 5. Búsqueda por prefijo</sub> | <sub>Figura 6. Sugerencias del catálogo</sub> |
-| <img src="assets/capturas/cache.png" alt="Caché"/> | <img src="assets/capturas/rendimiento.png" alt="Gráfica comparativa"/> |
+| <img src="assets/capturas/cache.png" alt="Caché" width="320" height="180"/> | <img src="assets/capturas/rendimiento.png" alt="Gráfica comparativa" width="320" height="180"/> |
 | <sub>Figura 7. Estado de la caché</sub> | <sub>Figura 8. FIFO vs. LRU vs. SIEVE</sub> |
 
 ### B. Loja
 
 | | | |
 |:--:|:--:|:--:|
-| <img src="assets/loja/puerta_ciudad.jpeg" alt="Puerta de la Ciudad"/> | <img src="assets/loja/catedral.jpeg" alt="Catedral de Loja"/> | <img src="assets/loja/plaza-parque-central.jpg" alt="Parque Central"/> |
+| <img src="assets/loja/puerta_ciudad.jpeg" alt="Puerta de la Ciudad" width="320" height="180"/> | <img src="assets/loja/catedral.jpeg" alt="Catedral de Loja" width="320" height="180"/> | <img src="assets/loja/plaza-parque-central.jpg" alt="Parque Central" width="320" height="180"/> |
 | <sub>Puerta de la Ciudad</sub> | <sub>Catedral</sub> | <sub>Parque Central</sub> |
-| <img src="assets/loja/calle_lourdes.png" alt="Calle Lourdes"/> | <img src="assets/loja/plaza_independencia.jpeg" alt="Plaza de la Independencia"/> | <img src="assets/loja/parque_jipiro.jpeg" alt="Parque Jipiro"/> |
-| <sub>Calle Lourdes</sub> | <sub>Plaza de la Independencia</sub> | <sub>Vista panorámica</sub> |
+| <img src="assets/loja/calle_lourdes.png" alt="Calle Lourdes" width="320" height="180"/> | <img src="assets/loja/plaza_independencia.jpeg" alt="Plaza de la Independencia" width="320" height="180"/> | <img src="assets/loja/parque_jipiro.jpeg" alt="Parque Jipiro" width="320" height="180"/> |
+| <sub>Calle Lourdes</sub> | <sub>Plaza de la Independencia</sub> | <sub>Parque Jipiro</sub> |
 
 <sub>Fotografías: indicar autor y fuente de cada imagen.</sub>
 
