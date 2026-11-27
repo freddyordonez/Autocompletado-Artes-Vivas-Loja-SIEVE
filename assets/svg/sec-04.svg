@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" role="img" aria-label="ACTO IV 04">
+<defs><linearGradient id="lg" x1="140" x2="1190" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#E7B04A"/><stop offset="1" stop-color="#E7B04A" stop-opacity="0"/></linearGradient></defs>
+<text x="6" y="100" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="104" fill="#E7B04A" fill-opacity="0" stroke="#E7B04A" stroke-width="1.6" stroke-dasharray="900" stroke-dashoffset="900">04
+<animate attributeName="stroke-dashoffset" from="900" to="0" dur="2.6s" begin="0.1s" fill="freeze"/>
+<animate attributeName="fill-opacity" from="0" to=".16" dur="1s" begin="2.2s" fill="freeze"/></text>
+<line x1="140" y1="80" x2="1190" y2="80" stroke="url(#lg)" stroke-width="2"/>
+<text x="1190" y="62" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', Menlo, monospace" font-size="14" font-weight="700" letter-spacing="7" fill="#B8863A">ACTO IV</text>
+<g><animateMotion path="M140,80 H1190" dur="5s" repeatCount="indefinite"/><rect x="-5" y="-5" width="10" height="10" fill="#E7B04A" transform="rotate(45)"/></g>
+<circle cx="140" cy="80" r="4" fill="#E7B04A"/>
+</svg>
